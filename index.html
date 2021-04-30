@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The King of Price - Introduction</title>
+        <link href="styles/basic.css" rel="stylesheet">
+        <link href="styles/Introduction.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Volkhov&display=swap" rel="stylesheet">
+        <script src="Script/introduction.js" defer></script>
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <div class="navwrapper">
+            <div class="nav">
+                <a href="#"><div class="currentpage">Introduction</div></a>
+                <a href="Cournot.html">Cournot Competition</a>
+                <a href="InfiniteCournot.html">Infinite Cournot</a>
+                <a href="CalculatorDemo.html">Calculator</a>
+                <a href="#">Credits</a>
+                <div id="indicator"></div>
+            </div>
+        </div>
+
+        <div class="sidenavwrapper">
+            <a href="#AStoryOfAutomobiles">A Story of Automobiles</a>
+            <a href="#EndOfTheStory">End of the Story?</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="Content">
+
+            <!-- Name Contents Sequentially For Archive Convenience -->
+            <div class="Content1">
+
+                <!-- Subsection Title -->
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        <span id="AStoryOfAutomobiles">A Story of Automobiles</span>
+                    </div>
+                </div>
+
+                <!-- Subsequent Contents Goes Here -->
+                <div class="DropCap">
+                    <p><img src="https://images.unsplash.com/photo-1561702469-c4239ced3f47?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1189&q=80" alt="Shipping containers taken from a helicopter" title="Shipping containers taken from a helicopter" class="pic1">
+                    Reverse the clock back to its 1980s, when the automobiles began to flood into the public's eyesight.
+                    Various countries have their own localized corporations dedicated to automobiles manufacturing.
+                    </p>
+                    <p>
+                    Among those companies, it seems that those from Japanese turned out to be the one pick of worldwide consumers, in terms of its high fuel efficiency and cost-performance ratio.
+                    This alerts the American government, as more of their citizens began to purchase automobiles imported from Japan instead of considering their local brands.
+                    As a protection for its local manufacturer, the American government requested a <a href="https://www.investopedia.com/terms/v/voluntary_export_restraint.asp"><strong>Voluntary Export Restraint</strong> (VER)</a> from those Japanese companies, which is nothing but rather reducing the number of exported autombiles from Japan.
+                    These companies eventually reached a consensus and decide to decrease their export quantities as a result.
+                    </p>
+                </div>
+            </div>
+
+            <div class="Content2">
+
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        <span id="EndOfTheStory">End of the Story?</span>
+                    </div>
+                </div>
+
+                <div class="DropCap">
+                    <p>
+                    Given such a scenario, where the Japanese automobile companies decrease their quantities of export at the request of American government, 
+                    who do you think will gain more benefits from this VER? 
+                    </p>
+                </div>
+
+                <!-- Would it be possible to insert interactions here? -->
+                <div id="buttons" class="buttons">
+                    <button onclick="toggletext('Ame')" class="button button1">American Companies</button>
+                    <button onclick="toggletext('Jap')" class="button button2">Japanese Companies</button>
+                </div>
+                <div class="buttons">
+                    <button id="fbutton1" class="button fbutton1" disabled>American Companies</button>
+                    <button id="fbutton2" class="button fbutton2" disabled>Japanese Companies</button>
+                </div>
+
+                <p id="guess_result">
+                    <p id="guess_correct"></p>
+                    <p id="guess_false"></p>
+                </p>
+                <p id="explanation1">
+                It turns out that the <strong><span id="JapComp">Japanese automobile companies</span></strong> seem to gain more benefits. Experts note that the following changes occured after the VER come to light:
+                    <ul id="explanation2">
+                        <li>One estimate asserts Japanese imported cars were about <span id="red">$2500 more expensive</span> in 1984 than they would have been without the VERS.</li>
+                        <li>Higher prices of imported cars allowed American producers to sell their automobiles at about <span id="red">$1000 more</span> than they would have.</li>
+                        <li>Due to these higher prices, the U.S. consumers paid about <span id="red">$10 billion more for Japanese cars</span> in 1985-86 than they would have otherwise, 
+                            and this money has gone directly into the pockets of the Japanese automobile producers.</li>
+                        <li>Much of the additional profits have been invested in increasing productive capabilities which allowed those companies to <span id="green">further reduce the cost 
+                            of producing new cars</span> in subsequent years. </li>
+                        <li>The VER did succed in saving American jobs, however, the cost per job saved was <span id="red">about $160,000 per year</span>.</li>
+                    </ul>
+                </p>
+                <p></p>
+                
+                <button id="next" class="button next" onclick='location.href="Cournot.html"'>Next: Cournot Competition</button>
+
+                <p><br></p>
+
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
