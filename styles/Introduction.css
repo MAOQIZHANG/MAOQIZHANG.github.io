@@ -1,0 +1,184 @@
+/* Subsection Title */
+.SubsectionTitleShell {
+    padding: 0.5rem;
+    position: relative;
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    padding: 3px;
+    text-align: left;
+}
+
+.SubsectionTitle {
+    background: #222;
+    color: white;
+    padding: 0.75rem;
+    font-family: 'Reggae One', cursive;
+    font-size: 30px;
+}
+
+/* Buttons */
+.buttons {
+    text-align: center;
+}
+
+.button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Reggae One', cursive;
+    font-size: 15px;
+    opacity: 1;
+    margin: 4px 2px;
+    border-radius: 3px;
+    transition-duration: 0.25s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white;
+    color: #58668b;
+    border: 1.5px solid #58668b;
+}
+
+.button1:hover {
+    background-color: #58668b;
+    color: white;
+}
+
+.button2 {
+    background-color: white;
+    color: #eb6841;
+    border: 1.5px solid #eb6841;
+}
+
+.button2:hover {
+    background-color: #eb6841;
+    color: white;
+}
+
+.fbutton1 {
+    background-color: #58668b;
+    color: white;
+    display: none;
+}
+
+.fbutton2 {
+    background-color: #eb6841;
+    color: white;
+    display: none;
+}
+
+.next {
+    background-color: white;
+    color: #426cf5;
+    border: 1.5px solid #426cf5;
+    width: fit-content;
+    float: right;
+    display: none;
+}
+
+.next:hover {
+    background-color: #426cf5;
+    color: white;
+}
+
+/* Main Page Organisation */
+
+.Content{
+    position: static;
+    width: 75%;
+    margin-top: 7%;
+    margin-bottom: 7%;
+    background-color: ghostwhite;
+    opacity: 0.7;
+    font-family: 'Reggae One', cursive;
+}
+
+.Content1 {
+    margin: 5% 5% 5% 5%;
+    font-size: 20px;
+}
+
+.Content2 {
+    margin: 5% 5% 5% 5%;
+    font-size: 20px;
+}
+
+.Content2 li {
+    font-size: 18px;
+}
+
+.Content1 .DropCap p::first-letter {
+    float: left;
+    font-size: 48px;
+    line-height: 1;
+    font-weight: bold;
+    margin-right: 9px;
+    margin-top: 3px;
+}
+
+.pic1 {
+    float: right;
+    width: 60%;
+    padding-left: 6px;
+}
+
+#red {
+    color: #ee0435;
+}
+
+#green {
+    color: #00a0b0;
+}
+
+#JapComp {
+    color: #8874a3;
+    text-decoration: underline #8874a3;
+}
+
+#explanation1 {
+    display: none;
+}
+
+#explanation2 {
+    display: none;
+}
+
+#guess_correct {
+    color: #7bc043;
+    text-decoration: underline #7bc043;
+}
+
+#guess_false {
+    color: #ee4035;
+    text-decoration: underline #ee4035;
+}
+
+/* Side Navbar */
+
+.sidenavwrapper {
+    width: 190px;
+    position: fixed;
+    z-index: 2;
+    top: 45%;
+    left: 5px;
+    overflow-x: hidden;
+    padding: 8px 0;
+    font-family: 'Reggae One', cursive;
+}
+
+.sidenavwrapper a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 12px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenavwrapper a:hover {
+    color: #426cf5;
+    text-decoration: underline #426cf5;
+}

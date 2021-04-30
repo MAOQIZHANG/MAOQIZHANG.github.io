@@ -1,0 +1,235 @@
+/* Main Content */
+
+html {
+    background-blend-mode: screen;
+    background-image: url(https://images.unsplash.com/photo-1615992174118-9b8e9be025e7?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1950&q=80);
+    background-attachment: local;
+    background-size: cover;
+    
+}
+
+li {
+    margin-left: 3em;
+    margin-right: 3em;
+}
+
+a {
+    transition: .5s color ease-in-out;
+}
+
+/* Gradient Border */
+body {
+    margin: 0;
+    display: grid;
+    place-items: center;
+}
+  
+.GradientBorderShell {
+    max-width: 80%;
+    padding: 1rem;
+    position: relative;
+    background: linear-gradient(to right, #ffd89b, #19547b);
+    padding: 3px;
+    float: left;
+    text-align: center;
+    margin-top: 20%;
+}
+
+.GradientBorder {
+    background: #222;
+    color: white;
+    padding: 2rem;
+    font-family: 'Reggae One', cursive;
+    font-size: 55px;
+}
+
+.result
+{
+  display:none;
+  }
+
+.navwrapper
+{
+    position: fixed;
+    width: 100%;
+    height: 65.6px;
+    background-color: black;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+.nav
+{
+    position: absolute;
+    display: table;
+    left: 0.5%;
+    margin-top: 0.8%;
+    float: left;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.nav a
+{
+    position: relative;
+    display: table-cell;
+    text-align: left;
+    color: #6b6b6b;
+    text-decoration: none;
+    font-family: 'Reggae One', cursive;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: 0.2s ease color;
+}
+
+.nav a .currentpage {
+    color: ghostwhite;
+}
+
+.nav a:before, .nav a:after
+{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 0.2s ease transform;
+}
+
+.nav a:before
+{
+    top: 0;
+    left: 10px;
+    width: 6px;
+    height: 6px;
+}
+
+.nav a:after
+{
+    top: 5px;
+    left: 18px;
+    width: 4px;
+    height: 4px
+}
+
+.nav a:nth-child(1):before
+{
+    background-color: yellow;
+}
+
+.nav a:nth-child(1):after
+{
+    background-color: red;
+}
+
+.nav a:nth-child(2):before
+{
+    background-color: #00e2ff;
+}
+
+.nav a:nth-child(2):after
+{
+    background-color: #89ff00;
+}
+
+.nav a:nth-child(3):before
+{
+    background-color: purple;
+}
+
+.nav a:nth-child(3):after
+{
+    background-color: palevioletred;
+}
+.nav a:nth-child(4):before
+{
+    background-color: #4ca1af;
+}
+
+.nav a:nth-child(4):after
+{
+    background-color: #c4e0e5;
+}
+
+.nav a:nth-child(5):before
+{
+    background-color: #ffd89b;
+}
+
+.nav a:nth-child(5):after
+{
+    background-color: #19547b;
+}
+
+#indicator
+{
+    position: absolute;
+    bottom: 0;
+    left: 20.5px;
+    width: 100px;
+    height: 3px;
+    border-radius: 5px;
+    transition: 0.2s ease left;
+}
+
+.nav a:hover
+{
+    color: #fff;
+}
+
+.nav a:hover:before, .nav a:hover:after
+{
+    transform: scale(1);
+}
+
+.nav a:nth-child(1):hover ~ #indicator
+{
+    background: linear-gradient(130deg, yellow, red);
+}
+
+.nav a:nth-child(2):hover ~ #indicator
+{
+    left: 300px;
+    background: linear-gradient(130deg, #00e2ff, #89ff00);
+}
+
+.nav a:nth-child(3):hover ~ #indicator
+{
+    left: 445px;
+    background: linear-gradient(130deg, purple, palevioletred);
+}
+
+.nav a:nth-child(4):hover ~ #indicator
+{
+    left: 670px;
+    background: linear-gradient(130deg, #4ca1af, #c4e0e5);
+}
+
+.nav a:nth-child(5):hover ~ #indicator
+{
+    left: 805px;
+    background: linear-gradient(130deg, #ffd89b, #19547b);
+}
+
+#ytd-url {
+  display: block;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 10px 14px;
+  margin: 20px;
+  color: #fff;
+  font-family: Arial;
+  font-size: 14px;
+  text-decoration: none;
+  background-color: #000;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.3);
+  z-index: 125;
+}
+
+
+
+
+
+
+

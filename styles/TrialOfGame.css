@@ -1,0 +1,139 @@
+#Game{
+    background: #222;
+    color: white;
+    padding: 2rem;
+    font-family: 'Reggae One', cursive;
+    font-size: 20px;
+}
+
+#Game{
+    width : 30%;
+}
+
+.left{
+    display: table-cell;
+    font-family: 'Reggae One', cursive;
+    width:40%;
+    float:left;
+    background-color: ghostwhite;
+    opacity: 0.7;
+    padding: 30px;
+    height : 600px;
+}
+
+.smallleft{
+    display: table-cell;
+    font-family: 'Reggae One', cursive;
+    width:30%;
+    float:left;
+    background-color: ghostwhite;
+    opacity: 0.7;
+    padding: 30px;
+    height : 600px;
+}
+
+.left1{
+    display: table-cell;
+    font-family: 'Reggae One', cursive;
+    width:48%;
+    float:left;
+}
+
+
+.right1{
+    display: table-cell;
+    font-family: 'Reggae One', cursive;
+    width:48%;
+    float:right;
+}
+
+
+.rightContainer{
+    display: table-cell;
+    font-family: 'Reggae One', cursive;
+    width:60%;
+    float:right;
+    background-color: ghostwhite;
+    opacity: 0.7;
+    padding: 30px;
+    height : 600px;
+}
+
+.right{
+    display: table-cell;
+    font-family: 'Reggae One', cursive;
+    width:40%;
+    float:right;
+    background-color: ghostwhite;
+    opacity: 0.7;
+    padding: 30px;
+    height : 600px;
+}
+
+.container{
+    display: table;
+    font-family: 'Reggae One', cursive;
+    width:80%;
+    padding : 10%
+}
+
+#GameBox{
+    font-family: 'Reggae One', cursive;
+    background-color: ghostwhite;
+    padding-box: 20px;
+}
+
+.canvas{
+    font-family: 'Reggae One', cursive;
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
+
+.label{
+    font-family: 'Reggae One', cursive;
+    font-size:20px;
+}
+
+#chart{
+    width : 100%;
+}
+
+.button {
+    padding-top: 10px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+input[type=number] {
+    border: 2px solid black;
+    border-radius: 4px;
+    height: 30px;
+    width : 200px;
+}
+
+.GameTitle{
+    max-width: 100%;
+    position: relative;
+    background: linear-gradient(to right, #ffd89b, #19547b);
+    padding: 3px;
+    text-align: center;
+    font-size: 20px;
+    height : 60px;
+}
+
+.GeneralCon{
+    position: static;
+    width: 70%;
+    margin-top: 7%;
+    background-color: ghostwhite;
+    opacity: 0.7;
+    font-family: 'Reggae One', cursive;
+    padding:5%;
+}

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <title>The King of Price - Cournot Competition</title>
+        <link href="styles/basic.css" rel="stylesheet">
+        <link href="styles/Cournot.css" rel="stylesheet">
+        <link href="styles/Infinite.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Volkhov&display=swap" rel="stylesheet">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="Script/Cournot.js" defer></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="Script/InfiniteGame.js" defer></script>
+        <script src = "https://www.jsdelivr.com/package/npm/chart.js"></script>
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <div class="navwrapper">
+            <div class="nav">
+                <a href="Introduction.html">Introduction</a>
+                <a href="Cournot.html">Cournot Competition</a>
+                <a href="#"><div class="currentpage">Infinite Cournot</div></a>
+                <a href="CalculatorDemo.html">Calculator</a>
+                <a href="Credits">Credits</a>
+                <div id="indicator"></div>
+            </div>
+        </div>
+
+        <!-- Side Navbar -->
+        <div class="sidenavwrapper">
+            <a href="#Introduction">Introduction</a>
+            <a href="#RepeatedGeneralGame">Repeated General Game</a>
+            <a href="#">Assumption on Cooperation</a>
+            <a href="#">repeated</a>
+            <a href="#ZeroDeterminant">ZeroDeterminantStrategy</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="ContentInfinite">
+            <!-- Name Contents Sequentially For Archive Convenience -->
+            <div class="Content1" id="Introduction">
+                <!-- Subsection Title -->
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        A repeated game: Introduction and Global Assumption
+                    </div>
+                </div>
+                <p>In this part, we show how the Cournot competition of two player can be modeled as a prisoner's dilemma and further investigates the case
+                when the game is repeated. (This is quite practical since the firm needs to produce every quarter each year)</p>
+                <p>In this part, we make extra assumptions about the quantity which are reasonable in practice.</p>
+            </div>
+
+            <div class="Content3" id="RepeatedGeneralGame">
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        Repeated General Game
+                    </div>
+                </div>
+                <p>In this part, we simply turn the game to a version of previous game that can be repeated</p>
+                <p>Note: if no chart is shown on the left, please reload the page</p>
+                <div class = "container" id = "Con3">
+                    <div class = "smallleft">
+                        <div class = "GameTitle">Repeated Game</div>
+                        <div>
+                            <label>This is Round <span id="count2">1</span></label>
+                            <br>
+                            <label for="playerquantity2"> <br>The quantity you want to produce: <input type=number id="playerquantity2"></label>
+                            <br>
+                            <div class = "button" onclick = "nextRound2()">NextRound</div>
+                            <div class = "button" onclick = "restart2()">Restart</div>
+                            <div class = "result" id = "InfiGameResult2">
+                                <br>
+                                <label>The other company chooses to produce quantity: <span id="oquantitylasttime2"></span></label>
+                 <br>
+                  You produce quantity: <span id="quantitylasttime2"></span>
+                 <br>
+                 <label>Your profit of this round is: <span id="profitYou2"></span></label>
+                 <br>
+                 <label>Your opponent's profit of this round is: <span id = "profit2"></span> </label>
+                 <br>
+                 <label>Your accumulated profit is: <span id="Tprofit12">0</span></label>
+                 <br>
+                 <label>Your opponent's accumulated profit is: <span id = "Tprofit22">0</span> </label>
+            </div>
+                            <div class = "result" id = "Error2"><br>Please input valid values for quantity
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+                    <div class = "rightContainer">
+                        <div class = "GameTitle">Real time Game result</div>
+                        <br>
+                        <div id="graph3" class =  "left1"></div>
+                        <div id="graph4" class =  "right1"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Content3">
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        Basic Assumptions and Definitions
+                    </div>
+                </div>
+                <p>
+                    You can easily see from your experience in playing the previous version that if no cooperation is allowed, it is very difficult to guarantee
+                    any value of gain (Actually, under the assumption the maximin value of one player is 0, which is quite meaningless.) We make further assumptions
+                    and try to maximize the gain when you are playing the game with someone intelligent enough.
+                </p>
+                <p>
+                    Assume that the two players in the game are both very smart, as discussed in previous page,</p>
+                <div class ="r">Strategy I: Cooperate: </div>
+                    Two players agree to cooperate in this game by setting the total of their produced quantity as cooperate quantity (Maximize the profit by total quantity, two set same quantity) and gain equally.
+                <div class ="r">Strategy II: Cheat: </div>
+                    However, if one knows that the other is going to cooperate, given the quantity produced by the other player, the player can maximize his profit independently.
+                    (This will hurt the profit of the other player of course.)
+                </p>
+                By the above assumption, the Cournot competition can be reduced to a 2-person game with finite pure strategies.
+                If value of quantity is allowed to be real values (see left matrix), it has been proved that the gain of the cooperator when the other is cheating is the same as the gain
+                when both players are cheating, which is not very interesting for discussion.
+                <table class="table">
+                    <tr>
+                        <th class="firm">Firm 1 \ Firm 2</th>
+                        <th class="strategy">Cooperate (Produce \(\))</th>
+                        <th class="strategy">Betray (Produce \(\)</th>
+                    </tr>
+                    <tr>
+                        <th class="strategy">Cooperate (Produce \(\))</th>
+                        <th class="NE">\((98, 98)\)</th>
+                        <th>\((110.25, 73.5)\)</th>
+                    </tr>
+                    <tr>
+                        <th class="strategy">Betray (Produce \(\frac{45}{8})\)</th>
+                        <th>\((73.5, 110.25)\)</th>
+                        <th>\((73.5, 73.5)\)</th>
+                    </tr>
+                </table>
+
+                By imposing a new assumption that quantity allowed can only take integer value, and conservative convention that if one player
+                is gain the same by producing two quantities, he tends to choose the one produces fewer quantity.
+                After imposing the assumption and the convention,
+                the game matrix become:
+                <table class="table">
+                    <tr>
+                        <th class="firm">Firm 1 \ Firm 2</th>
+                        <th class="strategy">Cooperate (Produce \(7\))</th>
+                        <th class="strategy">Betray (Produce \(10\)</th>
+                    </tr>
+                    <tr>
+                        <th class="strategy">Cooperate (Produce \(7\))</th>
+                        <th class="NE">\((98, 98)\)</th>
+                        <th>\((110,77 )\)</th>
+                    </tr>
+                    <tr>
+                        <th class="strategy">Betray (Produce \(10\))</th>
+                        <th>\((77, 110)\)</th>
+                        <th>\((80, 80)\)</th>
+                    </tr>
+                </table>
+
+                We surprisingly find that this game matrix resembles the <a href=”https://en.wikipedia.org/wiki/Prisoner%27s_dilemma”>prisoner's dilemma</a>.
+                (They are the same type of game if we turn the values into orders)
+                (order value from 1 to 4, 1 is the largest gain for one player)
+                <br>
+                <table class="table">
+                    <tr>
+                        <th class="firm">Firm 1 \ Firm 2</th>
+                        <th class="strategy">Cooperate(Not Confess)</th>
+                        <th class="strategy">Betray (Confess)</th>
+                    </tr>
+                    <tr>
+                        <th class="strategy">Cooperate(Not Confess)</th>
+                        <th class="NE">\((2, 2)\)</th>
+                        <th>\((4,1)\)</th>
+                    </tr>
+                    <tr>
+                        <th class="strategy">Betray (Produce \(10\))</th>
+                        <th>\((1,4)\)</th>
+                        <th>\((3, 3)\)</th>
+                    </tr>
+                </table>
+
+                <p>
+                </p>
+            </div>
+
+            <div class="Content4">
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                         After we apply the above rule, play the revised game first!
+                    </div>
+                </div>
+                <div class = "container" id = "Con2">
+                    <div class = "smallleft">
+                        <div id = "PlayerButtons1">
+                            <p>Choose the Player you want to play with</p>
+                            <div class = "playertype" onclick= "WithP1();">Player I</div>
+                            <div class = "playertype" onclick= "WithP2();">Player II</div>
+                        </div>
+                        <div>
+                            <div class = "result" id = "Player">
+                                <p>You now choose Player<span id = "playertypewithyou"></span></p>
+                            </div>
+                            <div class = "result" id = "ErrorChange">
+                                <p>Unable to change in the middle, click restart.
+                            </div>
+                        </div>
+                            <br>
+                            <p>This is Round <span id="count">1</span></p>
+                            <p>0 for Cooperate, 1 for Cheat</p>
+                            <br>Your choice: <input type=number id="playerquantity">
+                            <div class = "button" onclick = "nextRound()">NextRound</div>
+                            <div class = "button" onclick = "restart()">Restart</div>
+                            <div class = "result" id = "InfiGameResult">
+                                <br>
+                                <label>The other company chooses to produce quantity: <span id="oquantitylasttime"></span></label>
+                                <br>You produce quantity: <span id="quantitylasttime"></span>
+                                <br>
+                                <label>Your profit of this round is: <span id="profitYou"></span></label>
+                                <br>
+                                <label>Your opponent's profit of this round is: <span id = "profit"></span> </label>
+                                <br>
+                                <label>Your accumulated profit is: <span id="Tprofit1">0</span></label>
+                                <br>
+                                <label>Your opponent's accumulated profit is: <span id = "Tprofit2">0</span> </label>
+                            </div>
+                            <div class = "result" id = "Error">
+                                <br>Please input valid values for quantity
+                            </div>
+                           <div class = "result" id = "ErrorChoosePlayer">
+                                <br>Please choose player first
+                            </div>
+                            <br>
+                        </div>
+                    <div class = "rightContainer">
+                        <div class = "GameTitle">Real time Game result</div>
+                        <div id="graph" class =  "left1"></div>
+                        <div id="graph2" class =  "right1"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Content4">
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                         Possible Strategies of Player
+                    </div>
+                </div>
+                <p>Grim Trigger Strategy:
+                    <br>
+                    The player who use this strategy will cooperate if the other player continue to cooperate.
+                    However, if the other player cheats once, the player feel betrayed and will never cooperate.
+                </p>
+
+                <p>Carrot and Stick Strategy:
+                    <br>
+                    The player will cooperate if the other player cooperate. When the other player cheat, he will cheat back to punish the other player.
+                    Indeed, this is a punishment policy.<br>
+                    If the other player cheats once, the player choose to cheat back for a fixed number of times (denoted by T).
+                    After the punishment of cheating back, the player will turn back to cooperate till the other player cheat again.
+                    <br>
+                    ps. if T is 1, the strategy is usually called tit-for-tat.
+                    <br>
+                        however, we can extend the punishment time to be any number you like.
+                        i.e. if T = 1/2, it means that the player will punish the other every two times he is cheated by the other.
+                             if T = 2, it means that the player will punish the other player by cheating back in the following two rounds.
+                        Take a guess how the choice of T will influence the long-term result. (You will see the performance later)
+                </p>
+                <p>
+                <div class = "r">Aggressive Rate: </div>
+                <br>We also note that One can not gain more than the mutual cooperation value if he never cheats.
+                    The strategy mentioned above can be called protective mechanism since it never
+                    So for an aggressive player, he should choose to cheat actively, trying to gain a value higher than the mutual cooperation value.
+                    (Although this will lead to some cost since the other player might have a protective mechanism)
+                </p>
+                <p>We define a cheating technique, in which the player will choose to cheat given that the other player choose to cooperate in a row for T times.</p>
+            </div>
+
+            <div class="Content4">
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                         Board for competition!
+                    </div>
+                </div>
+
+                <div class = "PlayerSandbox">
+                <p>Freely choose player with different strategy to compete. Figure out the possible winner among all.</p>
+                <p>Player I:</p>
+                    Protective Mechanism: T =
+                    <input id = "ProtectiveT1" type = "number">
+                    <br>Aggressive Rate: <span id = "slider"></span>
+                    <div class="slidecontainer">
+                    <input type="range" min="0" max="10" value="1" class="slider" id="myRange" step ="1">
+                    </div>
+                    <p>Player II:</p>
+                    Protective Mechanism: T =
+                    <input id = "ProtectiveT2" type = "number">
+                    <br>Aggressive Rate: <span id = "slider2"></span>
+                    <div class="slidecontainer">
+                    <input type="range" min="0" max="10" value="1" class="slider" id="myRange2" step ="1">
+                    </div>
+                </div>
+                <div class = "Button" onclick = "StartComp();">Start the competition</div>
+                <div class = "result">
+                    You choose <span id = "SandboxPlayerI"></span> as First Player
+                    and <span id = "SandboxPlayerII"></span> as Second Player
+                </div>
+                <div class = "container">
+                <div id = "graph5" class ="left1"></div>
+                <div id = "graph6" class = "right1"></div>
+                </div>
+            </div>
+
+            <div class="Content4">
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                         A even better strategy: zero-determinant strategy* (This part is for math lovers)
+                    </div>
+                </div>
+                <p> In previous analysis, you can get a sense that player should analyze the previous behaviors of his opponents
+                    and wisely decide how to move.
+                    In this part, we use one strategy which is the best when the game is repeated infinitely. It is called
+                    <a href="">Zero Determinant Strategy.</a></p> It can be applied to iterated prisoner's dilemma.
+                    In general, a Prisoner's dilemma as well as this game can be expressed in the following form:
+                <table class="table">
+                    <tr>
+                        <th class="firm">Player 1 \ Player 2</th>
+                        <th class="strategy">Cooperate(c)</th>
+                        <th class="strategy">Betray(d)</th>
+                    </tr>
+                    <tr>
+                        <th class="strategy">Cooperate(c)</th>
+                        <th class="NE">(R,R)</th>
+                        <th>(S,T)</th>
+                    </tr>
+                    <tr>
+                        <th class="strategy">Betray(d)</th>
+                        <th>(T,S)</th>
+                        <th>(P,P)</th>
+                    </tr>
+                </table>
+                where T>R>P>S
+
+                <p> denote the four outcomes in the above matrix by (cc, cd, dc, dd)
+                    <br>Suppose in previous round, Player I plays \(p = (p_1, p_2, p_3, p_4)\)
+                    <br>(p_i represents her probabilities for cooperating under each of the previous outcomes)
+                    <br>while Player II plays \(p = (q_1, q_2, q_3, q_4)\)
+                    <br>The player using this strategy move by analyzing previous records of the probability of four strategy pairs. We introduce an extortionate share
+                    by choosing: (X denote the Player using this strategy and the other is denoted by y)
+                    \(\tilde{p} = \phi(S_x-P_1)-\chi(S_y-P_1)\)
+                    <br>where \(\chi\) is called the extortion factor.
+
+
+                </p>
+                <p>It is quite tedious to prove the validity of the strategy, for here we skip the proof of it and only look at the performance of
+                    the strategy. We apply method in the above paper to our game matrix.
+                </p>
+                <p>The key idea is that by applying this strategy, it unitarily sets  </p>
+                <div class = "Button" onclick = "DetailsZeroDeterminant();">Show Calculation(Warning: Tedious)</div>
+                <div class ="result" id = "ZeroDeterminantCal">
+                <p>
+                    Under the extortionate strategy, X’s score under this strategy is
+                    \(S_X = \frac{P(T-R)+\chi[R(T-S)-P(T-R)]}{T-R+\chi(R-S)}\)
+                </p>
+                <p>Assume that Player II is using Zero-Determinant Strategy, Player I is using any strategy other than this.
+                   In the long term, it can be shown that Player II can gain more than mutual cooperation value, while Player I can gain
+                   more than maximin value. </p>
+                </div>
+                <p>To show the validity of the zero-determinant strategy, we try to stimulate the game and plot the result as follows.
+                </p>
+                <div class = "graph" id = "ZeroDeterminantGraph">
+            </div>
+        </div>
+        </div>
+
+    </body>
+    <script>
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("slider");
+    output.innerHTML = slider.value;
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    }
+    var slider2 = document.getElementById("myRange2");
+    var output2 = document.getElementById("slider2");
+    output2.innerHTML = slider2.value;
+    slider2.oninput = function() {
+        output2.innerHTML = this.value;
+    }
+    </script>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The King of Price - Calculator</title>
+        <link href="styles/basic.css" rel="stylesheet">
+        <link href="styles/Introduction.css" rel="stylesheet">
+        <link href="styles/Plotter.css" rel="stylesheet">
+        <link href="styles/Introduction.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Volkhov&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <div class="navwrapper">
+            <div class = "nav">
+            <a href="Introduction.html">Introduction</a>
+            <a href="Cournot.html">Cournot Competition</a>
+            <a href="InfiniteCournot.html">Infinite Cournot</a>
+            <a href="#"><div class="currentpage">Calculator</div></a>
+            <a href="Credits.html">Credits</a>
+            <div id="indicator"></div>
+            </div>
+        </div>
+
+        <div class="Content">
+            <!-- Name Contents Sequentially For Archive Convenience -->
+            <div class="Content1">
+                <!-- Subsection Title -->
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        Calculator for Cournot Duopoly
+                    </div>
+                </div>
+                <!-- Subsequent Contents Goes Here -->
+                <p>This calculator allows you to solve for any Cournot Duopoly game!
+                </p>
+                <p>Consider two company in a trading competiton in which they produce one product
+                    Assuming the preliminaries that the demand function is strictly decreasing and the cost function for the
+                    two companies are linear. In this game, the two companies cannot cooperate AND must decide spontaneously.
+                    Suppose the cost function is linear, (in which we omit the fixed cost of production)
+                </p>
+                <div>
+                    <label for="marginalcost">marginal cost:  </label>
+                    <input type="number" id = "marginalcost" step="any" value = 2>
+                </div>
+                <br>
+                <div>
+                    <label>Quantity Function: </label>
+                    <input type="text" id = "demandFunction" value="30-x">
+                </div>
+                <br>
+                <div>
+                     <button class = "Button" onclick="Trial()">Show results of Cournot Competition</button>
+                     <div class = "result" id="ErrorInput">
+                         <p>Invalid input under general assumption of Cournot Competition</p>
+                     </div>
+                     <div class = "result float-container Box1" id = "Result1">
+                         <p>Calculation Result of the Page</p>
+                         <div class = "left1">
+                             <div id = "ResultN"></div>
+                         </div>
+                         <div class = "right1">
+                             <div id = "Result"></div>
+                         </div>
+                     </div>
+
+                     <button class = "Button" onclick="RepeatedGame()">Show Revised Cournot Repeated Game</button>
+                     <div class = "result float-container Box1" id = "Result2">
+                         <table class="table">
+                    <tr>
+                        <th class="firm">Firm 1 \ Firm 2</th>
+                        <th class="strategy">Cooperate (Produce <span id="Co"></span>)</th>
+                        <th class="strategy">Betray (Produce <span id="Be"></span>)</th>
+                    </tr>
+                    <tr>
+                        <th class="strategy">Cooperate (Produce <span id="Co2"></span>)</th>
+                        <th class="NE"> (<span id="RR"></span>)</th>
+                        <th>(<span id="ST"></span>)</th>
+                    </tr>
+                    <tr>
+                        <th class="strategy">Betray (Produce <span id="Be2"></span>)</th>
+                        <th>(<span id="TS"></span>)</th>
+                        <th>(<span id="PP"></span>)</th>
+                    </tr>
+                </table>
+                         <p>After Applying <div class = "red"> Integer Quantity</div> and  <div class = "red"> Conservative Convention</div></p>
+                         <table class="table">
+                             <tr>
+                        <th class="firm">Firm 1 \ Firm 2</th>
+                        <th class="strategy">Cooperate (Produce <span id="Co12"></span>)</th>
+                        <th class="strategy">Betray (Produce <span id="Be12"></span>)</th>
+                    </tr>
+                    <tr>
+                        <th class="strategy">Cooperate (Produce <span id="Co22"></span>)</th>
+                        <th class="NE"> (<span id="RRT2"></span>)</th>
+                        <th>(<span id="STT2"></span>)</th>
+                    </tr>
+                    <tr>
+                        <th class="strategy">Betray (Produce <span id="Be22"></span>)</th>
+                        <th>(<span id="TST2"></span>)</th>
+                        <th>(<span id="PPT2"></span>)</th>
+                    </tr>
+                </table>
+                     </div>
+                     <button class = "Button" onclick="ZeroDeterminant()">Show results of Zero Determinant Strategy </button>
+                     <div class = "result float-container Box1" id = "Result3">
+                         <p>Under the previous discussion of Zero-Determinant Strategy,
+                             The player using this strategy can get a payoff of
+                             <span id = "ZDX"></span> in the long run.
+                             And the other player can only get <span id = "ZDY"></span>
+                         </p>
+
+                     </div>
+                    <div class = "result" id = "ErrorZD">
+                        <p>
+                            Under this value and above assumption, the game cannot be modelled as a Prisoner's Dilemma and the Zero-Determinant Strategy cannot be applied.
+                        </p>
+                    </div>
+                </div>
+                <br>
+
+        </div>
+            <div class = "Content2">
+                <div class="float-container result">
+                    <section class="float-child-left" id="plotSettings">
+                    <label for="xMin">xMin: </label> value: <input type=number id="xMin" value=-5 step=0.5 oninput="plot();">
+                    <p></p>
+                    <label for="xMin">xMax: </label> value: <input type=number id="xMax" value=6.28 step=0.5 oninput="plot();">
+
+                    <p></p>
+                    <label for="yMin">yMin: </label> value: <input type=number id="yMin" value=-6 step=0.5 oninput="plot();">
+                    <p></p>
+                    <label for="yMax">yMax: </label> value: <input type=number id="yMax" value=6 step=0.5 oninput="plot();">
+                    <p></p>
+                    <label for="function">Function to plot: </label>
+                    <input id="function" type="text" value="sin(x)" onchange="plot();">
+                    <label for="function2">Function to plot: </label>
+                    <input id="function2" type="text" value="cos(x)" onchange="plot();">
+                    <p></p>
+                        <button onclick="plot();">Plot it!</button>
+                    </section>
+                    <section  class="float-child-right" id="plot">
+                    <div id="myFunction"></div>
+                    </section>
+                </div>
+            </div>
+
+        </div>
+    </body>
+
+    <script>
+    var slider = document.getElementById("quantity");
+    var output = document.getElementById("demo");
+    output.innerHTML = slider.value;
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    }
+    </script>
+<script src="Script/Calculator.js"></script>
+<script src="Script/Plotter.js"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://mauriciopoppe.github.io/function-plot/js/function-plot.js"></script>
+<script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
+</html>
+
+

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>The King of Price - Cournot Competition</title>
+        <link href="styles/basic.css" rel="stylesheet">
+        <link href="styles/navbar.css" rel="stylesheet">
+        <link href="styles/Cournot.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Volkhov&display=swap" rel="stylesheet">
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="Script/Cournot.js" defer></script>
+        <script src="https://mauriciopoppe.github.io/function-plot/js/function-plot.js"></script>
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <div class="navwrapper">
+            <div class="nav">
+                <a href="Introduction.html">Introduction</a>
+                <a href="#"><div class="currentpage">Cournot Competition</div></a>
+                <a href="InfiniteCournot.html">Infinite Cournot</a>
+                <a href="CalculatorDemo.html">Calculator</a>
+                <a href="Credits.html">Credits</a>
+                <div id="indicator"></div>
+            </div>
+        </div>
+
+        <!-- Side Navbar -->
+        <div class="sidenavwrapper">
+            <a href="#BasicNotionsAndGlobalAssumptions">Basic Notions & Global Assumptions</a>
+            <a href="#CournotMonopoly">Cournot Monopoly</a>
+            <a href="#CournotDuopoly">Cournot Duopoly</a>
+            <a href="#CooperatedCournotDuopoly">Cooperated Cournot Duopoly</a>
+            <a href="#IncentiveToCheat">Incentive to Cheat</a>
+            <a href="#TheTaleOfAGreedyWorld">The Tale of A Greedy World</a>
+            <a href="#CournotOligopoly">Cournot Oligopoly</a>
+            <a href="#AllAboutTheCournotDuopoly">All About the Cournot Duopoly</a>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="Content">
+
+            <!-- Name Contents Sequentially For Archive Convenience -->
+            <div class="Content1">
+
+                    <p>
+                    We provided the least amount of definition that will help constructing the frame of discussion in the simplified version. A more formal and rigorous one is also provided to you. 
+                    You may choose the one that you feel comfortable with!
+                    </p>
+                    <div class="buttons">
+                        <button onclick="toggleVersion('r')" id="button1" class="button button1">Simplified Definition</button>
+                        <button id="fbutton1" class="button fbutton1" disabled>Simplified Definition</button>
+                        <button onclick="toggleVersion('s')" id="button2" class="button button2">Rigorous Definition</button>
+                        <button id="fbutton2" class="button fbutton2" disabled>Rigorous Definition</button>
+                    </div>  
+                    <p></p>
+
+                <!-- Subsection Title -->
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        <span id="BasicNotionsAndGlobalAssumptions">Basic Notions and Global Assumptions</span>
+                    </div>
+                </div>
+
+                <!-- Subsequent Contents Goes Here -->
+                <p>
+                Let there be two countries, \(A\) and \(B\), where
+                <ul>
+                    <span id="simplified1">
+                        <li>Country \(A\) has \(l\) firms, we call them \(1, 2, \cdots, l\) respectively. Firm \(i\) \((i=1, 2, \cdots, l)\) can produce \(q_i\) units of chips that are needed for manufacturing CPUs for computers. 
+                            Note that these \(l\) firms will together produce $$q=q_1 + q_2 + \cdots + q_l$$ units of chips.</li>
+                    </span>
+
+                    <span id="rigorous1">
+                    <li>Country \(A\) has \(l\) firms, which we denote by \(1, 2, \cdots, l\) respectively. Firm \(i\) \((i=1, 2, \cdots, l)\) can produce \(q_i\) units of chips that are needed for manufacturing CPUs for computers. 
+                        Note that the total output level is exactly $$q=\sum_{i=1}^l q_i.$$</li>
+                    </span>
+                    <p></p>
+                    <span id="simplified2">
+                        <li>Let us assume one unit of chip cost c to produce. We further assume that \(c = 5\) for convenience. This means producing \(q\) units of chips need \(cq\) (which is just \(5q\)) units of money, in which case, we'll write \(c(q)\) to represent the cost to produce \(q\) units of chips.</li>
+                    </span>
+
+                    <span id="rigorous2">
+                        <li>The cost of producing \(q\) units of chips is provided by a cost function \(c(q)\).</li>
+                    </span>
+
+                    <li>
+                        <p id="simplified3">
+                        Country \(B\) would like to pay \(p\) for each unit of chip. It is generally known that the rarer a product is, the more valuable it is. 
+                        So is the chips producued by Country \(A\). Let us assume that Country B would like to pay \(p(q) = 20 - q\) units of money for each unit of the chip Country A produced 
+                        (\((q)\) behind the price \(p\) is just a notation we use to remind you that the amount of chips Country A produced, i.e., \(q\) is related to the price that Country B would like to pay, you can also see that the higher the \(q\) is, the lower the price is).
+                        </p>
+                        <p id="rigorous31">
+                        Country \(B\) has a certain demand \(D(q)\) on the chips that Country A would like to produce, where
+                        </p>
+                        <ul>
+                            <span id="rigorous32"><li>There exists \(\bar{p} \in (0, \infty)\) such that \(D(\bar{p})=0\) for \(p \ge \bar{p}\).</li></span>
+                            <span id="rigorous33"><li>\(D(0)\) is finite.</li></span>
+                            <span id="rigorous34"><li>D is strictly decreasing on \([0,\bar{p}]\).</li></span>
+                        </ul>
+                        <p id="rigorous35">An inverse demand function \(p(q)\) therefore exists, which was then regarded as the price function (Note that \(D\) and its inverse resembles the relationship between supply and demand).</p>
+                    </li>
+                </ul>
+                </p>             
+
+                <span id="rigorous4">
+                <ul>
+                    <li><p>
+                    We shall globally assume \(p(q)=20-q\). This means if the firms in Country \(A\) produce \(q\) units of good in total, then Country \(B\) will need to pay \(20-q\) for each unit of chips it purchases. 
+                    The linear form is assumed merely for convenience of later discussion. Indeed, price function can be of quadratic form or takes on more abstract form. One can also solely manipulate on symbols. 
+                    However, the result will not be that intuitive and interesting to see.
+                    </p></li>
+
+                    <li><p>
+                    We shall globally assume \(c(q)=5q\), that is, one unit of such chip requires 2 units of money to produce. Similarly, the linear form is assumed for convenience of later discussion. In reality, the 
+                    cost function may contains a fixed cost term (e.g. consider salaries of staffs), different firms may produce products at various cost dependent on the firm's productivity, etc.
+                    </p></li>
+                </ul>
+                </span>
+            </div>
+
+            <div class="Content2">
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        <span id="CournotMonopoly">Cournot Monopoly</span>
+                    </div>
+                </div>
+
+                <p>
+                    Let's start with the <span class="mark_red">simplest</span> case! Consider there is only one firm being capable of producing such chips in demand! Treat yourself as the head of the company and 
+                    your staff all counts on you to give a number, telling them how many units of chips they should produce in next quarter of the year. Of course, you want to earn more profits.
+                </p>
+
+                <hr>
+
+                <p>
+                    So here's the first question! Feel free to see the solution by clicking on the question!
+                </p>
+
+                <div class="buttons">
+                    <button onclick="showAnswer('1')" id="button31" class="button button3">Work out the profit of your firm provided that you decide to allocate your workers to produce \(q\) units of chips.</button>
+                    <button id="fbutton31" class="button fbutton3" disabled>Work out the profit of your firm provided that you decide to allocate your workers to produce \(q\) units of chips.</button>
+                </div>
+                <div id="answer1" class="answer1">
+                    <p>
+                    We shall denote the profit function of your firm by \(\pi\). Then $$\pi = p(q)q - c(q)q = (20-q)q - 5q = -q^2+15q$$
+                    </p>
+
+                    <div class="division division1">
+                        <p class="left_para">
+                        We help you to plot the graph of the profit function against the output level. Explore the gragh, there is a obvious peak where profit is maximised.
+                        </p>
+                        <div class="right_plot" id="Monopoly"></div>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button onclick="showAnswer('2')" id="button32" class="button button3">Try to work out which quantity would you like to produce in order to maximize your firm's profit.</button>
+                    <button id="fbutton32" class="button fbutton3" disabled>Try to work out which quantity would you like to produce in order to maximize your firm's profit.</button>
+                </div>
+                <div id="answer2" class="answer2">
+                    <p>
+                    Completing the square gives $$\pi=-q^2+15q=-(q-\dfrac{15}{2})^2+\dfrac{225}{4}, $$ which maximizes by \(q=\dfrac{15}{2}\) and the corresponding profit is \(\dfrac{225}{4}\) (\(=56.25\)).
+                    </p>
+
+                    <p>
+                    As the head of your firm, based on your analysis about your profits, you will simply instruct your staffs to start producing \(\dfrac{15}{2}\) such chips and wait for your fortune! 
+                    The above graph also serves as an evidence that your profit will maximize by \(\dfrac{15}{2}\).
+                    </p>
+                </div>
+            </div>
+
+            <div class="Content3">
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        <span id="CournotDuopoly">Cournot Duopoly</span>
+                    </div>
+                </div>
+
+                <p>
+                Now that you've figured out what to do when you're the only firm monopolizing the market. A natural question to ask is what happened when more competitors joined.
+                Let us assume now that another firm cuts into your market and start selling chips of same qualities. How should you defend yourself in this competition?
+                </p>
+
+                <p>
+                Denote your firm as Firm 1, with profit \(\pi_1\), your competitor's firm as Firm 2, with profit \(\pi_2\). Assume the outputs from Firm 1 and Firm 2 are \(q_1, q_2\) respectively.
+                </p>
+
+                <div class="buttons">
+                    <button onclick="showAnswer('3')" id="button33" class="button button3">Try to work out \(\pi_1\) and \(\pi_2\).</button>
+                    <button id="fbutton33" class="button fbutton3" disabled>Try to work out \(\pi_1\) and \(\pi_2\).</button>
+                </div>
+                <div id="answer3" class="answer3">
+                    <p>
+                    Evidently, \(\pi_1\) and \(\pi_2\) are both functions in terms of \(q_1\) and \(q_2\). Hence we may write notations like \(\pi_1(q_1, q_2)\) and \(\pi_2(q_1, q_2)\). 
+                    Then, it is easy to see that $$\pi_1(q_1, q_2) = (20-q_1-q_2)q_1-2q_1=-q_1^2+(15-q_2)q_1$$ and $$\pi_2(q_1, q_2) = (20-q_1-q_2)q_2-2q_2=-q_2^2+(15-q_1)q_2.$$
+                    </p>
+                </div>
+
+                <hr>
+
+                <div class="division division2">
+                    <p class="left_para">
+                        Based on your previous analysis, we again see that the profit functions for both firms are of quadratic form. Moreover, we notice that \(\pi_1\) is maximized by \(\hat{q_1}=\dfrac{15-q_2}{2}\) and
+                        \(\pi_2\) is maximizd by \(\hat{q_2}=\dfrac{15-q_1}{2}\). It is reasonable for us to call such \(\hat{q_1}\) and \(\hat{q_2}\) the "best responses" for Firm 1 and Firm 2 respectively, since such output level 
+                        is sort of a "response" that maximizes one's profit given one's opponent's move. Naturally, we come up with the following plot.
+                    </p>
+                    <div class="right_plot">
+                        <div id="Duopoly"></div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="buttons">
+
+                    <button onclick="showAnswer('4')" id="button34" class="button button4">
+                    <p id="popbox">
+                        <span id="popboxtitle">Nash Equilibrium</span> <br>
+                        We expect you to know something about <strong>Nash Equilibrium</strong>. If you don't, we provide a simple explanation for that.
+                    </p>
+                    </button>
+
+                    <button id="fbutton34" class="button fbutton4" disabled>
+                    <p id="popbox">
+                        <strong>Nash Equilibrium</strong> is a terminology in game theory that describes a circumstance 
+                        where no one can gain anything by unilateral change. Hence, this circumstance is sort of balanced as to both players, 
+                        since further making any changes in their moves doesn't really benefit them. Hence, it is often described as "solutions" to "games".
+                    </p>
+                    </button>
+                
+                </div>
+                    
+                <p>
+                Recall that these two lines correspond to the "<span class="mark_blue">best response</span>" of both firms in terms of output level that will maximize their profits. 
+                Hence there is a special meaning about the <span class="mark_red">intersection point</span>, where both firms have their profits maximized at it. 
+                It follows that no one can gain by unilateral change the output level. Therefore, we reach a <strong>Nash Equilibrium</strong> at the intersection.
+                This means, if the other firm also has a smart mind like you, you and your opponent will likely to choose the output quantity corresponds to the intersection point!!! 
+                We'll denote this special point from now on by \((q_1^e, q_2^e)\) (\(e\) refers to <strong>e</strong>quilibrium).
+                </p>
+                    
+                <p>
+                We leave the computation of the exact profits of both firms to you. See if you can find anything interesting.
+                </p>
+
+                <div class="buttons">
+                    <button onclick="showAnswer('5')" id="button35" class="button button3">Compute the profits for both firms when firm 1 and 2 output \(q_1^e\) and \(q_2^e\) respectively, i.e. compute \(\pi_1(q_1^e, q_2^e)\) and \(\pi_2(q_1^e, q_2^e)\). 
+                    Comparing the profits together with the profit you've obtained in the <span id="popboxtitle">Cournot Monopoly</span> section, see if you can observe anything.</button>
+                    <button id="fbutton35" class="button fbutton3" disabled>Compute the profits for both firms when firm 1 and 2 output \(q_1^e\) and \(q_2^e\) respectively, i.e. compute \(\pi_1(q_1^e, q_2^e)\) and \(\pi_2(q_1^e, q_2^e)\). 
+                        Comparing the profits together with the profit you've obtained in the <span id="popboxtitle">Cournot Monopoly</span> section, see if you can observe anything.</button>
+                </div>
+                <div id="answer5" class="answer5">
+                    <p>
+                    Solving the system of equations
+                    $$ \begin{cases} q_1 = \dfrac{15-q_2}{2} \\ q_2 = \dfrac{15-q_1}{2} \end{cases} $$
+                    gives
+                    $$ \begin{cases} q_1 = 5 \\ q_2 = 5 \end{cases} $$
+                    Putting \((q_1, q_2) = (5, 5)\) into \(\pi_1\) and \(\pi_2\) gives \(\pi_1 = \pi_2 = 25\).
+                    <br>
+                    <br>
+                    Note that \(\pi_1 + \pi_2 = 50 < \dfrac{225}{4} (=56.25)\). This means when the two firms merge into one firm, they behave worse than the scenario we've first discussed in the <span id="popboxtitle">Cournot Monopoly</span> section.
+                    </p>
+                </div>
+
+                <hr>
+            
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        <span id="CooperatedCournotDuopoly">Cooperated Cournot Duopoly</span>
+                    </div>
+                </div>
+
+                <p>
+                <em>Why is that?</em> This is because of two firms are simultaneously striving for their own best interest. Hence they lost the grip of the bigger picture.
+                What if these two firms cooperate with each other? Can they do a better job? 
+                </p>
+
+                <p>
+                With cooperation, they will not only strive for their own best interest, but will work together (behave as a single firm) to achieve the best result and reasonably split their profits afterwards.
+                Of course, by working together, here we mean that they together adjust their output level to maximize their total profits.
+                </p>
+                
+                <div class="buttons">
+                    <button onclick="showAnswer('6')" id="button36" class="button button3">Compute the total profit of the two firms, \(\pi = \pi_1 + \pi_2\).
+                    By regarding \(q_1+q_2\) on the whole, rearrange the terms in \(\pi\), see if you can find when will their total profits maximize.</button>
+                    <button id="fbutton36" class="button fbutton3" disabled>Compute the total profit of the two firms, \(\pi = \pi_1 + \pi_2\).
+                    By regarding \(q_1+q_2\) on the whole, rearrange the terms in \(\pi\), see if you can find when will their total profits maximize.</button>
+                </div>
+                <div id="answer6" class="answer6">
+                    <p>Note that 
+                    $$\pi = \pi_1 + \pi_2 = -q_1^2 + (15-q_2)q_1 - q_2^2 + (15-q_1)q_2 = -(q_1+q_2)^2 + 15(q_1 + q_2)$$
+                    </p>
+                    <p>Taking \(Q = q_1 + q_2\), we arrives at the same expression as that in the <span id="popboxtitle">Cournot Monopoly</span> section, i.e. they maximize the profits when \(Q = q_1 + q_2 = \dfrac{15}{2}\).</p>
+                </div>
+
+                <hr>
+
+                <p>
+                It is reasonable to split the workload equally, i.e. two firms produce half of the optimal quantity. We'll call these quantities \(q_1^c, q_2^c\) respectively (\(c\) stands for cooperation). and hence they should also split the profits equally. We leave it for you to do this. 
+                Comparing the profit of each firm when there is cooperation with the scenario where there is no such cooperation, what you can find now?
+                </p>
+                <div class="buttons">
+                    <button onclick="showAnswer('7')" id="button37" class="button button3">Assume they together output the amount that will maximize their profits and equally split them. Comparing this profit together with the one when there is no cooperation.</button>
+                    <button id="fbutton37" class="button fbutton3" disabled>Assume they together output the amount that will maximize their profits and equally split them. Comparing this profit together with the one when there is no cooperation.</button>
+                </div>
+                <div id="answer7" class="answer7">
+                    <p>
+                    Previous question leads to \(q_1 = q_2 = \dfrac{Q}{2} = \dfrac{15}{2}\). One computes that \(\pi_1 = \pi_2 = \dfrac{225}{8}\). Note that $$\dfrac{225}{8} (=28.125) > 25.$$ This means that with cooperation, they together indeed achieve a better result.
+                    </p>
+                </div>
+                
+                <p></p>
+                
+                <div class="buttons">
+                    <button onclick="showAnswer('8')" id="button38" class="button button4">
+                        <div id="popbox">
+                            It can be shown mathematically that they should each produce \(\dfrac{Q}{2}\) where \(Q=\dfrac{15}{2}\).
+                        </div>
+                    </button>
+                    <button id="fbutton38" class="button fbutton4" disabled>
+                        <div id="popbox">
+                            This is actually the maximum bargaining solution to this game. 
+                            Indeed, one checks that \((0, 0)\) is the maximin point, and \(\{(\pi_1(q_1, q_2), \pi_2(q_1, q_2)):q_1+q_2=\dfrac{15}{2}, q_1, q_2 \ge 0\}\) forms the bargaining set. 
+                            Applying the Nash arbitration procedure gives the maximum bargaining solution, reached by \((q_1, q_2) = (\dfrac{15}{4}, \dfrac{15}{4})\).
+                        </div>
+                    </button>
+                </div>
+
+                <hr>
+
+                <p>
+                    Note further that this cooperation is only beneficial to the two firms in Country A, but not the customer (Country B), for it has to purchase chips at a higher price! Indeed, when the two firms 
+                    doesn't collaborate, the price per unit of chip is \(p(q_1+q_2)= p(5+5)=10\). However, with collaboration, the price per unit of chip rises to \(p(q_1+q_2)=p(\dfrac{15}{4}+\dfrac{15}{4})=12.5\).
+                </p>
+                <hr>
+
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        <span id="IncentiveToCheat">Incentive to Cheat</span>
+                    </div>
+                </div>
+
+                <p>However, this cooperation is by no means stable. </p>
+                <p>Let us assume that your opponent is convinced by the invitation of cooperation that you proposed. This leaves you a choice to cheat on your opponent!!! Try the next question to see how you can take advantage of your opponent.</p>
+                
+                <div class="buttons">
+                    <button onclick="showAnswer('9')" id="button39" class="button button3">Compute \(\pi_1(q_1, q_2^c)\), find out when will \(\pi_1\) maximize and what is the payoff for both firms. Do some comparisons between the number you got and see how you can cheat on the other firm.</button>
+                    <button id="fbutton39" class="button fbutton3" disabled>Compute \(\pi_1(q_1, q_2^c)\), find out when will \(\pi_1\) maximize and what is the payoff for both firms. Do some comparisons between the number you got and see how you can cheat on the other firm.</button>
+                </div>
+                <div id="answer9" class="answer9">
+                    <p>
+                    Note that $$\pi_1(q_1, q_2^c) = -q_1^2 + (15-\dfrac{15}{4})q_1 = -q_1^2 + \dfrac{45}{4}q_1.$$ This will maximize by $$q_1 = \dfrac{45}{8} (=5.625)$$ and \(\pi_1 = \dfrac{2025}{64}\) (\(=31.640625\)), \(\pi_2 = \dfrac{675}{32}\) (\(=21.09375\)).
+                    </p>
+                    <p>We note that the profit of firm 1 is increased (From \(\dfrac{225}{8} (=28.125)\) to \(\dfrac{2025}{64} (=31.640625)\)), while the profit of firm 2 dropped (From \(\dfrac{225}{8} (=28.125)\) to \(\dfrac{675}{32} (=21.09375)\)). 
+                    This means that given firm 2 cooperates, firm 1 can choose to betray them by outputing some \(q_1^b\) (\(b\) stands for betray) that maximizes his own profit at the cost of sacrificing the firm 2's profit. The same is to Firm 2. </p>
+                </div>
+            </div>
+
+            <div class="Content4">
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        <span id="TheTaleOfAGreedyWorld">The Tale of A Greedy World</span>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button class="button button5" disabled>
+                        <div id="popbox">
+                            Before we proceed, we'd like to repeat that all these analyses are based on our previous assumption on the price and cost. Mathematically, we call them of linear form (As they only consists of the constant term and term of degree 1). 
+                            It may not be the case if we further allow price and cost of various other weird forms. But \(p(q)\) and \(c(q)\) of various forms also remains as a potential topic that you may want to explore.
+                        </div>
+                    </button>
+                </div>
+
+                <p>Up until now, we've learnt a lot about Cournot Duopoly! Recall that
+                    <ul>
+                        <li>Two firms striving for their best interest without cooperation lead to a Nash Equilibrium (\((q_1^e, q_2^e) = (5, 5)\), with \((\pi_1, \pi_2) = (25, 25)\)).</li>
+                        <li>Two firms can cooperate, which grants them higher profits (\((q_1^c, q_2^c) = (\dfrac{15}{4}, \dfrac{15}{4})\), with \((\pi_1, \pi_2) = (\dfrac{225}{8}, \dfrac{225}{8})\)).</li>
+                        <li>One firm can cheat on the other, by providing them fake intention of cooperation. The cheater gets even higher payoff, and the one get cheated gets worse payoff than he's supposed to receive (\((q_1^b, q_2^c) = (\dfrac{45}{8}, \dfrac{15}{4})\), with \((\pi_1, \pi_2) = (\dfrac{2025}{64}, \dfrac{675}{32})\)).</li>
+                    </ul>
+                </p>
+
+                <p>
+                It seems that one of the case is missing, i.e., when both firms provide with each other a fake intention of cooperation and all decide to cheat the other. 
+                We'll show that in this case, both players "reap what they've sown" and eventually hurt themselves. But before that, we invite you to try to explore yourself.
+                </p>
+
+                <hr>
+
+                <button class="button button7" disabled>
+                    <div id="popbox">
+                        Of course, you may play around with this simple calculator as you like. But most importantly, you should try to entering the quantities when
+                        <ol>
+                            <li>One firm betrays and the other cooperate</li>
+                            <li>Both firms betray</li>
+                        </ol>
+                        Pay extra attention to the profits, see if you can find anything profound.
+                    </div>
+                </button>
+
+                <div class="GameBox">
+                    <h3>Cournot Duopoly Game</h3>
+                    <p>
+                        > You're given the price function and the cost function: \(p(q) = 20 - q\) and \(c(q) = 5q\). <br>
+                        > You're free to adjust the output level of two firms, however, \(q_1, q_2, q_1+q_2\) must be within the range \([0, 20]\) and of 4 decimal places. <br>
+                        > "Show Result" will help you to compute the profits earned by both firms providing that they abide the output level you gave.
+                    </p> 
+
+                    <label for="q1">Firm 1 produces: </label><input type="number" min="0" max="20" step="0.0001" id="q1"> <br>
+                    <label for="q2">Firm 2 produces: </label><input type="number" min="0" max="20" step="0.0001" id="q2"> <br>
+
+                    <p></p>
+
+                    <div class="buttons">
+                        <button onclick="showResult()" class="button button6"><span id="OnButton6">Show Result</span></button>
+                    </div>
+
+                    <span id="GameResult">
+                        <ul>
+                            <li>The profit of Firm 1 is: <span id="pi1"></span></li>
+                            <li>The profit of Firm 2 is: <span id="pi2"></span></li>
+                            <li>The total profit of 2 firms is: <span id="pi"></span></li>
+                        </ul>
+                    </span>
+                </div>
+
+                <hr>
+
+                <p>We hope you noticed that
+                <div class="buttons">
+                    <button onclick="showAnswer('10')" id="button310" class="button button6">Spoiler Alert</button>
+                    <button id="fbutton310" class="button fbutton6" disabled>Two players that are both intended to cheat the other eventually gets the same payoff as his opponent if his opponent chooses to collaborate, i.e. the worse profits ever.</button>
+                </div>
+                This is by no means an accident. Indeed, it can be shown that, no matter how one alter the price function and the cost function, as long as they are of the linear form, this is <strong>always true</strong>.
+                </p>
+
+                <div class="buttons">
+                    <button onclick="showAnswer('11')" id="button311" class="button button6">If you're interested in a rigorous proof...</button>
+                    <button id="fbutton311" class="button fbutton6" disabled>Theorem (The Tale of A Greedy World): \(\pi_1(q_1^b, q_2^b) = \pi_2(q_1^b, q_2^b) = \pi_2(q_1^b, q_2^c)\).</button>
+                </div>
+                <div id="answer11" class="answer11">
+                    <p>
+                    <em>Proof</em>. We first generalize the price function and the cost function by writing \(p(q) = D - q\) and \(c(q) = Cq\) for some constants \(C, D > 0 \) such that \(D > C\). 
+                    Then $$\pi_1(q_1, q_2) = (D-q_1-q_2)q_1 - Cq_1 = -q_1^2 + (D-C-q_2)q_1.$$ Similarly, $$\pi_2(q_1, q_2) = (D-q_1-q_2)q_2 - Cq_2 = -q_2^2 + (D-C-q_1)q_2.$$ 
+                    Hence $$\pi = \pi_1 + \pi_2 = -q_1^2 + (D-C-q_2)q_1 - q_2^2 + (D-C-q_1)q_2 = -(q_1+q_2)^2+(D-C)(q_1+q_2),$$ which maximizes by \(q_1+q_2 = \dfrac{D-C}{2}\). <br>
+                    One checks that \(\{(\pi_1(q_1, q_2), \pi_2(q_1, q_2)): q_1 + q_2 = \dfrac{D-C}{2}, q_1, q_2 \ge 0\}\) forms the bargaining set of this game and the maximin point is \(0, 0\). 
+                    Applying the Nash Arbitration Method gives \((\pi_1^c, \pi_2^c) = (\dfrac{11}{16}(D-C)^2, \dfrac{11}{16}(D-C)^2)\), obtained by \((q_1^c, q_2^c) = (\dfrac{D-C}{4}, \dfrac{D-C}{4})\). 
+                    </p>
+                    <p>
+                    One checks that \(\pi_1(q_1, q_2^c) = -q_1^2 + \dfrac{3}{4}(D-C)q_1\), which maximizes by \(q_1^b = \dfrac{3}{8}(D-C)\). This then gives \(\pi_2(q_1^b, q_2^c) = \dfrac{3}{32}(D-C)^2\). 
+                    One also checks that \(\pi_1(q_1^b, q_2^b) = \pi_2(q_1^b, q_2^b) = \dfrac{3}{32}(D-C)^2\). The equalities then arises naturally.
+                    </p>
+                </div>
+
+                <hr>
+
+                <p>So what this theorem tells us is that, if both of the players are trying to cheat on the other, they themselves eventually reap what they've sown. As far as the author known, 
+                there is no documentation of such result. We shall name the result as </p>
+                <div class="buttons">
+                    <button class="button button5" disabled>
+                        <div id="popboxtitle">
+                            "The Tale of A Greedy World".
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="Content5">
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        <div id="CournotOligopoly">Cournot Oligopoly</div>
+                    </div>
+                </div>
+                <p></p>
+                <div class="buttons">
+                    <button class="button button9">
+                        <div id="popbox">
+                            We further mention the existence of analysis on <span id="underline">Cournot Oligopoly</span> (i.e. more than 2 firms), but the analysis to be carried out will be of the similar taste as what we've done throughout the whole section except that 
+                            you need to figure out how to handle the multiple variables. We recommend those who are intersted to start with the <em>symmetric Cournot Oligoply</em> where all firms' output level are the same, and proceed to other scenarios.
+                        </div>
+                    </button>
+                </div>
+                <p></p>
+
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        <div id="AllAboutTheCournotDuopoly">All About the Cournot Duopoly</div>
+                    </div>
+                </div>
+                
+                <p>We shall use this last section to help you recap everything we've traversed up until now.</p>
+                <ul>
+                    <li>Two firms striving for their best interest without cooperation lead to a Nash Equilibrium (\((q_1^e, q_2^e) = (5, 5)\), with \((\pi_1, \pi_2) = (25, 25)\)).</li>
+                    <li>Two firms can have cooperation which can help them to achieve better result, yet there is also room for betrayal. We can formalize a \(2 \times 2\) payoff matrix 
+                        that documents all possibilities (Cells corrected to 3 decimal places).
+                        <p></p>
+                        <table class="CournotDuopolyTable">
+                            <tr>
+                                <th class="firm">Firm 1 \ Firm 2</th>
+                                <th class="strategy">Cooperate (Produce \(\frac{15}{4}\))</th>
+                                <th class="strategy">Betray (Produce \(\frac{45}{8})\)</th>
+                            </tr>
+                            <tr>
+                                <th class="strategy">Cooperate (Produce \(\frac{15}{4}\))</th>
+                                <th class="NE">\((28.125, 28.125)\)</th>
+                                <th>\((31.641, 21.094)\)</th>
+                            </tr>
+                            <tr>
+                                <th class="strategy">Betray (Produce \(\frac{45}{8})\)</th>
+                                <th>\((21.094, 31.641)\)</th>
+                                <th>\((21.094, 21.094)\)</th>
+                            </tr>
+                        </table>
+                        <p></p>
+                        <p>Among which, both firms choose to cooperate is the only Nash Equilibrium (No one can gain by unilateral change).</p>
+                    </li>
+                    <li><span id="TToAGW">The Tale of A Greedy World</span>: If both players choose to betray the other, then they eventually reap what they've sown.</li>
+                </ul>
+
+                <p>This wraps up the whole section on Cournot Competition. In the next section, we'll proceed to explore the beauty of the repeated Cournot Competition.</p>
+                <p></p>
+
+                <button id="next" class="button next" onclick='location.href="InfiniteCournot.html"'>Next: Infinitely Repeated Cournot Competition</button>
+                
+                <p><br></p>
+            </div>
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,208 @@
+#Game{
+    background: #222;
+    color: white;
+    padding: 2rem;
+    font-family: 'Reggae One', cursive;
+    font-size: 20px;
+}
+
+.ContentInfinite{
+    position: static;
+    width: 90%;
+    margin-top: 7%;
+    margin-bottom: 7%;
+    background-color: ghostwhite;
+    opacity: 0.7;
+    font-family: 'Reggae One', cursive;
+}
+
+#Game{
+    width : 30%;
+}
+
+.left{
+    font-family: 'Reggae One', cursive;
+    width:50%;
+    float:left;
+    height : 600px;
+}
+
+.smallleft{
+    display: table-cell;
+    font-family: 'Reggae One', cursive;
+    width: 30%;
+    float:left;
+    height : 600px;
+    padding: 10px
+}
+
+.left1{
+    font-family: 'Reggae One', cursive;
+    width:48%;
+    float:left;
+}
+
+.right1{
+    font-family: 'Reggae One', cursive;
+    width:48%;
+    float:right;
+}
+
+.rightContainer{
+    font-family: 'Reggae One', cursive;
+    width:60%;
+    float:right;
+    padding: 10px
+}
+
+.right{
+    font-family: 'Reggae One', cursive;
+    width:40%;
+    float:right;
+}
+
+.container{
+    display: table;
+    font-family: 'Reggae One', cursive;
+    width:100%;
+    height: 800px;
+}
+
+#GameBox{
+    font-family: 'Reggae One', cursive;
+    background-color: ghostwhite;
+    padding-box: 20px;
+}
+
+
+#chart{
+    width : 100%;
+}
+
+input[type=number] {
+    border: 2px solid black;
+    border-radius: 4px;
+    height: 30px;
+    width : 200px;
+}
+
+.GameTitle{
+    max-width: 100%;
+    position: relative;
+    background: linear-gradient(to right, #ffd89b, #19547b);
+    padding: 3px;
+    text-align: center;
+    font-size: 20px;
+    height : 60px;
+}
+
+.GeneralCon{
+    position: static;
+    width: 70%;
+    margin-top: 7%;
+    background-color: ghostwhite;
+    opacity: 0.7;
+    font-family: 'Reggae One', cursive;
+    padding:5%;
+}
+
+.button {
+    background-color: white;
+    color: #53345e;
+    border: 1.5px solid #53345e;
+    width: 30%;
+    font-size: 15px;
+    padding: 8px 16px;
+    border-radius: 15px;
+    cursor: default;
+}
+
+.button:hover {
+    background-color: #53345e;
+    color: #53345e;
+    border: 1.5px solid #53345e;
+    width: 30%;
+    font-size: 15px;
+    padding: 8px 16px;
+    border-radius: 15px;
+    cursor: default;
+}
+
+.table {
+    width: 75%;
+    background-color: #34495E;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+}
+
+.playertype{
+    width:40%;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    float: left;
+    color: black;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+}
+
+.playertype1{
+    width:24%;
+    background-color: whitesmoke;
+    border-radius: 15px;
+    float: left;
+    color: black;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+}
+
+
+.playertype1:hover{
+    width:24%;
+    background-color: darkslateblue;
+    border-radius: 15px;
+    float: left;
+    color: black;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 5px;
+}
+
+.playertype:hover{
+    background-color: #34495E;
+}
+
+.Button{
+    background: whitesmoke;
+    width: 100%;
+    border: 1.5px solid #566357;
+    font-size: 20px;
+    padding:20px;
+    text-align: center;
+}
+
+.Button:hover {
+    background-color: #566357;
+    color: white;
+}
+
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 50%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none;
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+
