@@ -488,11 +488,11 @@
                     take a look at both players' payoffs. When will the player facing zero-determinant strategy has the motivation to accept the extortion?
                 </p>
                 <div>
-                    <label for="ExFactor">Extortionate Factor(between 0 and 10):</label><span id="exDisplay"></span>
-                    <input type="range" id="ExFactor" min="0" max="10" step = "0.01">
+                    <label for="ExFactor1">Extortionate Factor(between 0 and 10):</label><span id="exDisplay1"></span>
+                    <input type="range" id="ExFactor1" min="0" max="10" step = "0.01">
                     <p>In the long run, if the other player accepted such factor,</p>
-                    <p>Your gain using such Zero Determinant Strategy: <span id="GainX"></span></p>
-                    <p>The other player‘s gain: <span id="GainY"></span></p>
+                    <p>Your gain using such Zero Determinant Strategy: <span id="GainX1"></span></p>
+                    <p>The other player‘s gain: <span id="GainY1"></span></p>
                 </div>
         </div>
 
@@ -519,10 +519,10 @@
         var R2 = 98;
         var S2 = 77;
         var P2 = 80;
-        var slider = document.getElementById("ExFactor");
-        var output = document.getElementById("exDisplay");
-        var GainX = document.getElementById("GainX");
-        var GainY = document.getElementById("GainY");
+        var slider = document.getElementById("ExFactor1");
+        var output = document.getElementById("exDisplay1");
+        var GainX = document.getElementById("GainX1");
+        var GainY = document.getElementById("GainY1");
         output.innerHTML = slider.value;
         slider.oninput = function() {
             output.innerHTML = this.value;
