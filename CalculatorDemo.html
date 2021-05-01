@@ -48,8 +48,9 @@
 
                     <div class="GameTitle">Price Function and Marginal Cost</div>
                         <p>
-                            > Price function must be in the form \(p(q)=D-kq\) for some \(D, q \in \mathbb{R}^+\) <br>
-                            > The marginal cost must be a positive constant \(c \in \mathbb{R}^+\)
+                            > Price function must be in the form \(p(q)=D-kq\) for some \(D, q \in \mathbb{R}^+\). <br>
+                            > The marginal cost must be a positive constant \(c \in \mathbb{R}^+\). <br>
+                            > Please click "Cournot Duopoly Payoff Matrix" before "Extortionate Zero-determinant Strategy" to update the game matrix.
                         </p>
                         <div class="CostPrice">
                             <div class="Price">
@@ -152,23 +153,25 @@
                         <button class="button button4" onclick="ZeroDeterminant()">Extortionate Zero-determinant Strategy </button>
                         <div class = "result float-container Box1" id = "Result3">
                             <div class = "container Box2">
-                                <div class = "left">
-                                 <br>
-                                 <img src="formula.png">
-                             </div>
-                             <div class = "right">
-                                 <label for="ExFactor">Points (between 0 and 10):</label><span id="demo"></span>
-                                 <input type="range" id="ExFactor" min="0" max="10" step = "0.01">
-                                 <p>In the long run, if the other player accepted such factor,</p>
-                                 <p>Your gain using such Zero Determinant Strategy: <span id="GainX"></span></p>
-                                 <p>The other player‘s gain: <span id="GainY"></span></p>
+                                <div class="leftpart">
+                                    <div class="GameTitle">Prototype Formula</div>
+                                    <h3>Extortionate Payoff</h3>
+                                    $$s_x=\dfrac{P(T-R)+\chi\left[R(T-S)-P(T-R)\right]}{(T-R)+\chi(R-S)}$$
+                                    <h3>Extorted Payoff</h3>
+                                    $$s_y=\dfrac{\chi P(R-S)+\left[R(T-P)-S(R-P)\right]}{(T-R)+\chi(R-S)}$$ 
+                                </div>
+                                <div class = "rightpartnopadding">
+                                    <div class="GameTitle">Extortionate Setup</div> <br>
+                                    <label for="ExFactor"><span id="color4">Extortionate Factor </span></label><span id="demo"></span> <br>
+                                    <input type="range" id="ExFactor" min="0" max="10" step = "0.001">
+                                    <p>If the other player decides to accept the extortion, then:</p>
+                                    <p>Extortionate Payoff: <br><span id="GainX"></span></p>
+                                    <p>Extorted Payoff: <br><span id="GainY"></span></p>
                              </div>
                          </div>
-                         <p>Under the previous discussion of Zero-Determinant Strategy, if the other player can accept an
-                             extortionate factor which is infinitely large(but this is very unlikely in reality)
-                             The player using this strategy can get a payoff of
-                             <span id = "ZDX"></span> in the long run.
-                             And the other player can only get <span id = "ZDY"></span>
+                         <div class="GameTitle">Limiting Behavior</div>
+                         <p>
+                             When \(\chi\to\infty\), \(s_x =\) <span id = "ZDX"></span>, \(s_y = \) <span id = "ZDY"></span>.
                          </p>
                      </div>
                     <div class = "result" id = "ErrorZD">
@@ -178,7 +181,13 @@
                     </div>
                 </div>
                 <br>
+
+                <button id="next" class="button next" onclick='location.href="Credits.html"'>Next: Credits</button>
+                <br>
             </div>
+
+            
+
         </div>
 
         </div>

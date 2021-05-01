@@ -39,6 +39,12 @@ hr {
     width: 40%;
 }
 
+.rightpartnopadding {
+    float: right;
+    padding-right: 3%;
+    width: 40%;
+}
+
 .container1 {
     display: block;
     font-family: 'Reggae One', cursive;
@@ -57,4 +63,25 @@ hr {
     margin-right: auto;
     padding: 5px;
     font-weight: normal;
+}
+
+#ExFactor {
+    margin-top: 1%;
+}
+
+#demo {
+    margin-left: 1%;
+}
+
+.next {
+    background-color: white;
+    color: #426cf5;
+    border: 1.5px solid #426cf5;
+    width: fit-content;
+    float: right;
+}
+
+.next:hover {
+    background-color: #426cf5;
+    color: white;
 }
