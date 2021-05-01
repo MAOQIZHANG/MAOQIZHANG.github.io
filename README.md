@@ -3,9 +3,20 @@ Title: King Of Price
 
 Link: https://maoqizhang.github.io/ 
 
-Guidance:
+Developers: 
+> Hu Xiannan (hans0711@connect.hku.hk)
+> Zhang Maoqi (maoqi@connect.hku.hk)
 
-1.	Please open the link with Chrome Browser for best view and functions.
-2.	If you find that the font is too big, please adjust by pressing Ctrl and +
-3.	This project includes real-time plot. If you cannot see the graph. Please reload the page. 
-4.	Hope you enjoy exploring our page, if you have any questions, please contact developers. 
+Project Format:
+> Website
+
+Project Summary:
+> This project serves as an introduction for readers to Cournot Competition. It includes four main contents: Introduction, Cournot Competition, Infinitely Repeated Cournot, and a Calculator. Our key contributions are summarized in the Credit page. 
+
+Important Note:
+1.	Please open the link with Google Chrome Browser for best view and functions;
+2.	DO NOT zoom in/out on the page, please control the zoom ratio between 90% to 120%;
+3.	Pressing down Ctrl and “+” will shrink the font size.
+4.	This project includes multiple real-time plots. If you cannot see the graph, please refresh the page.
+5.	We hope you enjoy exploring our project and have fun with Cournot Competition, if you have any questions, please contact developers.
+
