@@ -514,21 +514,4 @@
 
         </div>
     </body>
-    <script>
-        var T2 = 110;
-        var R2 = 98;
-        var S2 = 77;
-        var P2 = 80;
-        var slider = document.getElementById("ExFactor1");
-        var output = document.getElementById("exDisplay1");
-        var GainX = document.getElementById("GainX1");
-        var GainY = document.getElementById("GainY1");
-        output.innerHTML = slider.value;
-        slider.oninput = function() {
-            output.innerHTML = this.value;
-            d = T2 - R2 + this.value * (R2 - S2)
-            GainX.innerHTML = Math.min((P2 * (T2 - R2) + this.value * (R2 * (T2 - S2) - P2 * (T2 - R2))) / d,110);
-            GainY.innerHTML = Math.min((this.value * P2 * (R2 - S2) + (R2 * (T2 - P2) - S2 * (R2 - P2))) / d,110);
-        }
-    </script>
 </html>
