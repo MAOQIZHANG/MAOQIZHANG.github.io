@@ -402,7 +402,7 @@ function Extend3(){
         xaxis: {
           range: [0, end]
         },
-        'yaxis.range[1]': 80 + 5
+        'yaxis.range[1]': 130
       };
     Plotly.relayout('graph3', View);
     Plotly.extendTraces('graph3', update1, [0]);
