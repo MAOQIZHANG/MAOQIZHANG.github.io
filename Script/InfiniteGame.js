@@ -9,6 +9,7 @@ function WithP1(){
     document.getElementById('Player').style.display = "block";
     document.getElementById('PlayerButtons1').style.display = "none";
 }
+
 function WithP2(){
     player = 2;
     document.getElementById('playertypewithyou').innerHTML = "II";
@@ -253,7 +254,7 @@ function RestartPlot12() {
         title: {
             text:'The Result for current round',
             font: {family: 'Reggae One, cursive;',
-                size: 20
+                size: 15
             },
             xref: 'paper',
             x: 0.05,
@@ -353,6 +354,7 @@ function nextRound2() {
         Extend4();
     }
 }
+
 function Extend4(){
     var newY1 = document.getElementById('profitYou2').innerHTML;
     var newY2 = document.getElementById('profit2').innerHTML;
@@ -420,10 +422,6 @@ function restart2() {
     document.getElementById('InfiGameResult2').style.display = "none";
 }
 
-function DetailsZeroDeterminant() {
-    document.getElementById('ZeroDeterminantCal').style.display = "block";
-}
-
 function RestartPlot5() {
     var layout = {
         showlegend: true,
@@ -431,7 +429,7 @@ function RestartPlot5() {
         title: {
             text:'The Result for current round',
             font: {family: 'Reggae One, cursive;',
-                size: 20
+                size: 15
             },
             xref: 'paper',
             x: 0.05,
@@ -572,7 +570,6 @@ function GameIterator(a, b, c, d) {
     return rangeIterator;
 }
 
-
 var cnt = 0;
 function StartComp() {
     P1 = parseInt(document.getElementById('ProtectiveT1').value,10);
@@ -639,45 +636,6 @@ function StartComp() {
             if(++cnt === 10) clearInterval(interval);}, 30);}
 }
 
-
-
-var cnt = 0;
-
-
-
-function StartComp1() {
-    R = 98;
-    S = 70;
-    T = 110;
-    P = 80;
-    var A1 = document.getElementById("ProtectiveT1").value;
-    var A2 = document.getElementById("ProtectiveT2").value;
-    RestartPlot5();
-    RestartPlot6();
-    count = 0;
-    while (count<100) {
-        Extend5(count, R, R);
-        count++;
-    }
-
-    var Ag1 = parseInt(A1, 10);
-    var Ag2 = parseInt(A2, 10);
-    var Pro1 = parseInt(document.getElementById("slider").innerHTML,10);
-    var Pro2 = parseInt(document.getElementById("slider2").innerHTML,10);
-    min = Math.min(Ag1,Ag2);
-    while (count<=40) {
-        P1.push(0);
-        P2.push(0);
-        TP1.push(R);
-        TP1.push(R);
-        Extend5(count+1, R, R)
-        Extend6(R,R)
-        count = count+1;
-    }
-    while (count <= 1000) {
-
-    }
-}
 
 function Extend5(newX, newY1, newY2){
     var update1 = {x:  [[newX]], y: [[newY1]]}
