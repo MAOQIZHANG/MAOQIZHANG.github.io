@@ -649,6 +649,7 @@ function StartComp() {
             y: [[record1/x], [record2/x]]
         }, [0, 1])
             if(++cnt === 10) clearInterval(interval);}, 30);}
+    
 }
 
 
@@ -703,6 +704,8 @@ function Extend6(newY1, newY2){
 }
 
 
-
-
-
+function ShowLimit(){
+    document.getElementById("limit").style.display = "none";
+    document.getElementById("flimitb").style.display = "block";
+    document.getElementById("flimit").style.display = "block";
+}
