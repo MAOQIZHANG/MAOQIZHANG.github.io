@@ -58,14 +58,17 @@
 
                 <p>Take your time, play around with the simulator below.</p>
 
-                <p>Note that in this part, we assume the demand function to be D(q) = 30-q where D is the price
-                   and we assume marginal cost for both firms are 2.</p>
                 <div class="GameBox">
                     <h3>Infinitely Repeated Cournot Duopoly Game</h3>
                     <p>
-                        > We use \(q_i\) denote the amount to produce, \(\pi_i^k\) denote the profit in the kth round, and \(\pi_i\) denote the accumulated profits.
+                        > We modified the value of price and demand function: Price is now \(p(q)=30-q\) and Cost is now \(c(q)=2\). 
+                        You may take this as an exercise, use previous knowledges to calculate your optimal quantity to produce, or start with any value you like! <br>
+                        > We use \(q_i\) denote the amount to produce, \(\pi_i^k\) denote the profit in the kth round, and \(\pi_i\) denote the accumulated profits. <br>
+                        > This calculator only accept integer values, this assumption will be explained later. <br>
+                        > This game consists real-time plot of profits and accumulated profits, <span class="color5">if you cannot see the graph on the right hand side properly, please refresh the page</span>.
+                        
                     </p>
-                    <p>Please reload the page if you cannot see graph on the right</p>
+
                     <div class="container" id = "Con3">
                         <div class="smallleft">
                             <div class="GameTitle">Game Options</div>
@@ -73,7 +76,7 @@
 
                                 <p>This is Round <span id="count2">1</span></p>
 
-                                <label for="playerquantity2">You want to produce: 
+                                <label for="playerquantity2">You want to produce (\(q_1\)): 
                                     <input type=number min="0" max="20" step="0.0001" id="playerquantity2">
                                 </label>
 
@@ -83,17 +86,21 @@
                                 </div>
 
                                 <div class = "result" id = "InfiGameResult2">
-                                    <label>\(q_1\): <span id="quantitylasttime2"></span>(The quantity produced by you)</label>
+                                    <p></p>
+                                    <span class="color5">Output level</span> <br>
+                                    <label>\(q_1\): <span id="quantitylasttime2"></span></label>
                                     <br>
-                                    <label>\(q_2\): <span id="oquantitylasttime2"></span>(The quantity produced by opponent)</label>
+                                    <label>\(q_2\): <span id="oquantitylasttime2"></span></label>
                                     <br>
-                                    <label>\(\pi_1^k\): <span id="profitYou2"></span>(Your net gain in this round)</label>
+                                    <span class="color5">Round Gain</span> <br>
+                                    <label>\(\pi_1^k\): <span id="profitYou2"></span></label>
                                     <br>
-                                    <label>\(\pi_2^k\): <span id = "profit2"></span>(Opponent's net gain in this round)</label>
+                                    <label>\(\pi_2^k\): <span id = "profit2"></span></label>
                                     <br>
-                                    <label>\(\pi_1\): <span id="Tprofit12">0</span>(Your accumulated gain)</label>
+                                    <span class="color5">Accumulated Gain</span> <br>
+                                    <label>\(\pi_1\): <span id="Tprofit12">0</span></label>
                                     <br>
-                                    <label>\(\pi_2\): <span id = "Tprofit22">0</span>(Opponent's accumulated gain)</label>
+                                    <label>\(\pi_2\): <span id = "Tprofit22">0</span></label>
                                 </div>
                             </div>
                             <div class="result" id="Error2">Please input valid values for quantity</div>
