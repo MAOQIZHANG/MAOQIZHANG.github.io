@@ -2,6 +2,21 @@ var player = 0
 var you = [];
 var flag;
 var count = 0;
+var T0 = 110;
+var R0 = 98;
+var S0 = 77;
+var P0 = 80;
+var slider = document.getElementById("ExFactor1");
+var output = document.getElementById("exDisplay1");
+var GainX = document.getElementById("GainX1");
+var GainY = document.getElementById("GainY1");
+output.innerHTML = slider.value;
+slider.oninput = function() {
+    output.innerHTML = this.value;
+    d = T0 - R0 + this.value * (R0 - S0);
+    GainX.innerHTML = Math.min((P0 * (T0 - R0) + this.value * (R0 * (T0 - S0) - P0 * (T0 - R0))) / d,110);
+    GainY.innerHTML = Math.min((this.value * P0 * (R0 - S0) + (R0 * (T0 - P0) - S0 * (R0 - P0))) / d,110);
+}
 function WithP1(){
     player = 1;
     flag = 0;
@@ -41,8 +56,8 @@ function RestartPlot() {
         size: 15,
         color: '#7f7f7f'
       }
-    },
-  },
+      },
+        },
         yaxis: {
         title: {
             text: 'Profit for each player',
