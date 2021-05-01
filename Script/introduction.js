@@ -14,5 +14,6 @@ function toggletext(btn) {
   
   document.getElementById("explanation1").style.display = "block";
   document.getElementById("explanation2").style.display = "block";
+
   document.getElementById("next").style.display = "block"; 
 }

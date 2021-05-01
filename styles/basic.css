@@ -32,7 +32,8 @@ body {
     padding: 3px;
     float: left;
     text-align: center;
-    margin-top: 20%;
+    margin-top: 15%;
+    
 }
 
 .GradientBorder {
@@ -45,8 +46,8 @@ body {
 
 .result
 {
-  display:none;
-  }
+  display: none;
+}
 
 .navwrapper
 {
@@ -227,6 +228,23 @@ body {
   z-index: 125;
 }
 
+.middle {
+    display: flex;
+    font-size: 12px;
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+
+h4 {
+    font-size: 19px;
+    font-weight: lighter;
+}
+
+.colorRed {
+    color: darkred;
+    text-decoration: underline #ff5588;
+}
 
 
 

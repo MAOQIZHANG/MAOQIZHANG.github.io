@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
         <meta charset="utf-8">
-        <title>The King of Price - Introduction</title>
+        <title>The King of Price</title>
         <link href="styles/basic.css" rel="stylesheet">
-        <link href="styles/Introduction.css" rel="stylesheet">
+        <link href="styles/Credits.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Volkhov&display=swap" rel="stylesheet">
-        <script src="Script/introduction.js" defer></script>
+        <script src="Script/credits.js" defer></script>
     </head>
 <body>
     <div class="navwrapper">
@@ -33,39 +33,75 @@
                     </div>
                 </div>
             <p>
-                In this project, we create an interactive way for readers to explore Cournot Competition and its variation.
+                In this project, we create an interactive way for readers to explore Cournot Competition and its repeated variation. Our key contribution can be summarized as follows:
             </p>
-            <br>
-            Our key contribution can be summarized as follows:
-            <br>1.
-            <br>2. Model the cournot competition as a prisoner's dilemma by assumption of integer quantity and conversative convention.
-            <br>3. An interactive and visualized game board for repeated Cournot game (With real-time game result)
-            <br>4. A Sandbox Mode that allows player to choose Player with different strategy to compete.
-            <br>5. A calculator that can find out the solution under different condition with input
+            
+            <button class="button button7" disabled>
+                <div id="popbox">
+                    <ol>   
+                        <li>A step-by-step guide to the fundamental concept of Cournot Competition</li>
+                        <li>A nice theorem under our assumptions on linearity of price function and cost function</li>
+                        <li>Model the Cournot Competition as an Iterated Prisonners' Dilemma with assumption on integer values and conservative convention.</li>
+                        <li>An interactive and visualized game board for infinitely repeated Cournot competition.</li>
+                        <li>A calculator that can find out the solution under various assumptions.</li>
+                    </ol>
+                </div>
+            </button>
 
-        </div>
-
-        <div class="Content2">
-            <div class="SubsectionTitleShell">
-                    <div class="SubsectionTitle">
-                        <span id = "Contributors">Contributors</span>
-                    </div>
-            </div>
-            Hu Xiannan
-            <br>
-            Zhang Maoqi
         </div>
 
         <div class="Content1">
             <div class="SubsectionTitleShell">
                     <div class="SubsectionTitle">
-                        <span id = "References">References</span>
+                        <span id = "Contributors">Contributors</span>
                     </div>
             </div>
+            <button onclick="copyEmail1()" class="button buttonblue">
+                Hu Xiannan
+            </button>
+            <button onclick="copyEmail2()" class="button buttonpink">
+                Zhang Maoqi
+            </button>
+
+            <p class="small">
+                Special thanks to <span id="color">Li Yanbo</span> for ideas on initial site construction.
+            </p>
         </div>
 
-
-
+        <div class="Content1">
+            <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        <span id="References">References</span>
+                    </div>
+            </div>
+            
+            <button class="button button7" disabled>
+                <p>Hyperlinks inserted to all references for whoever interested.</p>
+            </button>
+            
+            
+            <div class="ref">
+                <p>
+                <a href="https://doi.org/10.1016/B978-0-12-816027-5.00006-9">Becchetti, L., Bruni, L., & Zamagni, S. (2020). Chapter 6 - Non-competitive markets and elements of game theory. In <em>The Microeconomics of Wellbeing and Sustainability</em> (pp. 157-198). Academic Press.</a>
+                </p>
+                <p>
+                <a href="https://www.math.stonybrook.edu/~azinger/research/IPD.pdf">Chen, J., & Zinger, A. (2014). <em>The robustness of Zero-Determinant Strategies in Iterated Prisoner's Dilemma games</em>.</a>
+                </p>
+                <p>
+                <a href="http://georgana.net/sotiris/teach/docs/IO/CollusionSlides.pdf">Georganas, S. (2012, February). <em>Collusion</em> [PowerPoint slides].</a>
+                </p>
+                <p>
+                <a href="https://doi.org/10.1016/B978-0-12-811023-2.00015-3">Mandy, D. M. (2017). Chapter 15 - Oligopoly. In <em>Producers, consumers, and partial equilibrium</em> (pp. 339-396). Academic Press.</a>           
+                </p>
+                <p>
+                <a href="https://doi.org/10.1073/pnas.1206569109">Press, W. H., & Dyson, F. J. (2012). Iterated Prisoner's Dilemma contains strategies that dominate any evolutionary opponent. <em>PNAS, 109</em>(26), 10409-10413.</a>
+                </p>
+                <p>
+                <a href="https://fac.ksu.edu.sa/sites/default/files/microeco-_varian.pdf">Varian, H. R. (n.d.). Chapter 27 - Oligopoly. In <em>Intermediate microeconomics: a modern approach</em> (8th ed., pp. 498-521). W. W. Norton & Company.</a>
+                </p>
+            </div>    
+            
+        </div>
     </div>
 
 

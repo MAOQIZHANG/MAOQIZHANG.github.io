@@ -74,6 +74,7 @@
     border: 1.5px solid #426cf5;
     font-size: 15px;
     width: 100%;
+    height: fit-content;
 }
 
 .button5 {
@@ -367,6 +368,14 @@ input {
     color: #851e3e;
 }
 
+.red {
+    color: #ee0435;
+}
+
+.green {
+    color: #00a0b0;
+}
+
 .mark_blue {
     color: #426cf5;
 }
@@ -398,6 +407,10 @@ input {
     text-decoration: underline #426cf5;
 }
 
-.r{
+.r {
     color:darkred;
+}
+
+#LARGE {
+    font-size: 25px;
 }

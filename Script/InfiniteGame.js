@@ -25,7 +25,7 @@ function RestartPlot() {
         title: {
             text:'The Result for current round',
             font: {family: 'Reggae One, cursive;',
-                size: 20
+                size: 15
             },
             xref: 'paper',
             x: 0.05,
@@ -390,6 +390,7 @@ function Extend4(){
     legend: {"orientation": "h"},};
     Plotly.newPlot('graph4', data, layout);
 }
+
 function Extend3(){
     var newX = document.getElementById('count2').innerHTML-1;
     var newY1 = document.getElementById('profitYou2').innerHTML;
@@ -502,34 +503,147 @@ var P1 = [];
 var P2 = [];
 var TP1 = [];
 var TP2 = [];
-var F1 = 0;
-var F2 = 0;
-var F12 = 0;
-var F22 = 0;
 
-var count
-function rand() {
-  return Math.random();
+function GameIterator(a, b, c, d) {
+    const R = 98;
+    const S = 77;
+    const T = 110;
+    const P = 80;
+    let start = 0;
+    let end = Infinity;
+    let step = 1;
+    let nextIndex = start;
+    let i = 0;
+    const A1 = a;
+    const A2 = b;
+    const P1 = c;
+    const P2 = d;
+    let F1a = 1;
+    let F2a = 1;
+    let F1p = 0;
+    let F2p = 0;
+    let temp1 = 0;
+    let temp2 = 0;
+    const rangeIterator = {
+       next: function() {
+           let result;
+           if (nextIndex < end) {
+               i++;
+               nextIndex += step;
+               temp1 = 0;
+               if(F1p > 0){
+                   F1p--;
+                   temp1 = 1;
+               } else if (F1a === A1) {
+                   F1a =0;
+                   temp1 = 1;
+               }
+               if (F2p > 0){
+                   F2p--;
+                   temp2 = 1;
+               } else if (F2a === A2) {
+                   F2a = 0;
+                   temp2 = 1;
+               } else {
+                   temp2 = 0;
+               }
+               if (temp1 === 0 & temp2 === 0){
+                   result={p1: R, p2: R, index:nextIndex};
+                   F1a++;
+                   F2a++;
+               } else if (temp1 === 0 & temp2 === 1){
+                   result={p1: S, p2: T, index:nextIndex};
+                   F1p = P1;
+                   F2a++;
+                   F1a = 0;
+               } else if (temp1 === 1 & temp2 === 0) {
+                   result={p1: T, p2: S, index:nextIndex};
+                   F1a++;
+                   F2p = P2;
+                   F2a = 0;
+               } else {
+                   result={p1: P, p2: P, index:nextIndex};
+               }
+               return result;
+           }
+           return {p1: 0, p2: 0, index:1000}
+       }
+    };
+    return rangeIterator;
 }
 
-Plotly.plot('graph5', [{
-  y: [1,2,3].map(rand),
-  mode: 'lines',
-  line: {color: '#80CAF6'}
-}, {
-  y: [1,2,3].map(rand),
-  mode: 'lines',
-  line: {color: 'red'}
-}]);
 
 var cnt = 0;
 function StartComp() {
-    var interval = setInterval(function() {
+    P1 = parseInt(document.getElementById('ProtectiveT1').value,10);
+    P2 = parseInt(document.getElementById('ProtectiveT2').value,10);
+    A1 = parseInt(document.getElementById('AggressiveT1').value,10);
+    A2 = parseInt(document.getElementById('AggressiveT2').value,10);
+    if (P1<0 || P2<0 || A1<0 || A2<0) {
+        document.getElementById("InfiInputError").style.display = "block";
+        document.getElementById("PlotResult").style.display = "none";
+    } else {
+        document.getElementById("InfiInputError").style.display = "none";
+        document.getElementById("PlotResult").style.display = "block";
+        Plotly.newPlot('graph5', [{
+        y: [],
+        mode: 'lines',
+        line: {color: '#80CAF6'},
+            name: "Player I",
+        }, {
+        y: [],
+        mode: 'lines',
+        line: {color: '#DF56F1'},
+            name: "Player II",
+        }], {title: {
+            text:'Actual Score of each round',
+            font: {family: 'Reggae One, cursive;',
+                size: 14
+            },
+            xref: 'paper',
+            x: 0.05,
+        }});
+        Plotly.newPlot('graph6', [{
+        y: [],
+        mode: 'lines',
+        line: {color: '#80CAF6'},
+        name: "Player I",
+        }, {
+        y: [],
+        mode: 'lines',
+        line: {color: '#DF56F1'},
+        name: "Player II",
+        }], {title: {
+            text:'Average Score',
+            font: {family: 'Reggae One, cursive;',
+                size: 14
+            },
+            xref: 'paper',
+            x: 0.05,
+        }});
+        const sequence = GameIterator(A1,A2,P1,P2);
+        var record1 = 0;
+        var record2 = 0;
+        var x = 0;
+        var interval = setInterval(function() {
+        result = sequence.next();
+        x = result.index;
+        record1 += result.p1;
+        record2 += result.p2;
         Plotly.extendTraces('graph5', {
-            y: [[rand()]]}, [0,1]);
-        if(cnt === 1000) clearInterval(interval);
-        }, 3000);
+            y: [[result.p1], [result.p2]]
+        }, [0, 1])
+            Plotly.extendTraces('graph6', {
+            y: [[record1/x], [record2/x]]
+        }, [0, 1])
+            if(++cnt === 10) clearInterval(interval);}, 30);}
 }
+
+
+
+var cnt = 0;
+
+
 
 function StartComp1() {
     R = 98;
@@ -579,7 +693,6 @@ function Extend5(newX, newY1, newY2){
     Plotly.extendTraces('graph5', update1, [0]);
     Plotly.extendTraces('graph5', update2, [1]);
 }
-
 
 function Extend6(newY1, newY2){
     newTY1 = TP1.reduce((pv, cv) => pv + cv, 0);

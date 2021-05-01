@@ -1,3 +1,104 @@
+/* Subsection Title */
+.SubsectionTitleShell {
+    padding: 0.5rem;
+    position: relative;
+    background: linear-gradient(to right, #2193b0, #6dd5ed);
+    padding: 3px;
+    text-align: left;
+}
+
+.SubsectionTitle {
+    background: #222;
+    color: white;
+    padding: 0.75rem;
+    font-family: 'Reggae One', cursive;
+    font-size: 30px;
+}
+
+/* Buttons */
+.button {
+    background-color: white;
+    color: #53345e;
+    border: 1.5px solid #53345e;
+    width: 30%;
+    font-size: 15px;
+    padding: 8px 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-family: 'Reggae One', cursive;
+}
+
+.button:hover {
+    background-color: #53345e;
+    color: ghostwhite;
+    border: 1.5px solid #53345e;
+    transition: 0.3s;
+}
+
+.orderedlist {
+    background-color: white;
+    color: #5e343e;
+    border: 1.5px solid #5e343e;
+    font-size: 20px;
+    padding: 4px 8px;
+    border-radius: 15px;
+    font-family: 'Reggae One', cursive;
+    margin-bottom: 20px;
+}
+
+.orderedlist:hover {
+    box-shadow: 3px 3px 3px #5e343e;
+    transition: 0.3s ease-in-out 0.3s;
+}
+/* Not actually a button */
+.buttonblue { 
+    background-color: ghostwhite;
+    color: #005b96;
+    border: 1.5px solid #005b96;
+    font-size: 19px;
+    padding: 8px 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 97%;
+    display: block;
+    font-family: 'Reggae One', cursive;
+    text-decoration: none;
+    text-align: center;
+}
+
+.buttonblue:hover {
+    background-color: #005b96;
+    border: 1.5px solid #005b96;
+    color: ghostwhite;
+    transition: 0.3s;
+}
+
+/* Table */
+.CournotDuopolyTable {
+    width: 75%;
+    background-color: #34495E;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.strategy {
+    color: #ffde4b;
+    font-size: 15px;
+}
+
+.firm {
+    color: #4bcfff;
+    font-size: 12px;
+}
+
+.NE {
+    border: 2px solid #ffde4b;
+    border-radius: 15px;
+}
+
 #Game{
     background: #222;
     color: white;
@@ -14,6 +115,29 @@
     background-color: ghostwhite;
     opacity: 0.7;
     font-family: 'Reggae One', cursive;
+}
+
+.Content1, .Content2, .Content3, .Content4, .Content5 {
+    margin: 5% 5% 5% 5%;
+    font-size: 20px;
+}
+
+.GameBox {
+    display: block;
+    background-color: #34495E;
+    color: white;
+    padding: 16px 32px;
+    font-family: 'Reggae One', cursive;
+    font-size: 17px;
+    opacity: 1;
+    margin: 4px 2px;
+    border-radius: 15px;
+    height: fit-content;
+}
+
+.GameBox h3 {
+    color: #ffde4b;
+    text-decoration: underline #ffde4b;
 }
 
 #Game{
@@ -50,7 +174,7 @@
 
 .rightContainer{
     font-family: 'Reggae One', cursive;
-    width:60%;
+    width: 55%;
     float:right;
     padding: 10px
 }
@@ -71,7 +195,6 @@
 #GameBox{
     font-family: 'Reggae One', cursive;
     background-color: ghostwhite;
-    padding-box: 20px;
 }
 
 
@@ -83,18 +206,24 @@ input[type=number] {
     border: 2px solid black;
     border-radius: 4px;
     height: 30px;
-    width : 200px;
+    width: 200px;
 }
 
 .GameTitle{
-    max-width: 100%;
-    position: relative;
-    background: linear-gradient(to right, #ffd89b, #19547b);
-    padding: 3px;
+    background-color: ghostwhite;
+    color: #5e343e;
+    border: 1.5px solid #5e343e;
+    padding: 8px 16px;
+    border-radius: 5px;
     text-align: center;
-    font-size: 20px;
-    height : 60px;
 }
+
+.GameTitle:hover {
+    background-color: #5e343e;
+    color: ghostwhite;
+    transition: 0.2s;
+}
+
 
 .GeneralCon{
     position: static;
@@ -104,28 +233,6 @@ input[type=number] {
     opacity: 0.7;
     font-family: 'Reggae One', cursive;
     padding:5%;
-}
-
-.button {
-    background-color: white;
-    color: #53345e;
-    border: 1.5px solid #53345e;
-    width: 30%;
-    font-size: 15px;
-    padding: 8px 16px;
-    border-radius: 15px;
-    cursor: default;
-}
-
-.button:hover {
-    background-color: #53345e;
-    color: #53345e;
-    border: 1.5px solid #53345e;
-    width: 30%;
-    font-size: 15px;
-    padding: 8px 16px;
-    border-radius: 15px;
-    cursor: default;
 }
 
 .table {
@@ -140,7 +247,7 @@ input[type=number] {
 }
 
 .playertype{
-    width:40%;
+    width: 48%;
     background-color: whitesmoke;
     border-radius: 15px;
     float: left;
@@ -151,33 +258,9 @@ input[type=number] {
     padding: 5px;
 }
 
-.playertype1{
-    width:24%;
-    background-color: whitesmoke;
-    border-radius: 15px;
-    float: left;
-    color: black;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px;
-}
-
-
-.playertype1:hover{
-    width:24%;
-    background-color: darkslateblue;
-    border-radius: 15px;
-    float: left;
-    color: black;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 5px;
-}
 
 .playertype:hover{
-    background-color: #34495E;
+    background-color: darkslateblue;
 }
 
 .Button{
@@ -206,3 +289,82 @@ input[type=number] {
 }
 
 
+.red {
+    color: #fe4a49;
+    text-decoration: underline #fe4a49;
+}
+
+.green {
+    color: #7bc043;
+    text-decoration: underline #7bc043;
+}
+
+#playerquantity2, #playerquantity {
+    width: 100%;
+}
+
+#twobuttons {
+    width: 100%;
+}
+#NextRound1, #Restart1, #NextRound2, #Restart2 {
+    width: 49%;
+}
+
+#PD {
+    color: #5e343e;
+}
+
+#PD:hover {
+    color: #fe4a49;
+    transition: 0.3s;
+}
+
+#underlineyellow {
+    text-decoration: underline yellow;
+}
+
+#color1 {
+    color: #fe4a49;
+    text-decoration: underline #fe4a49;
+}
+
+.color1 {
+    color: #fe4a49;
+    text-decoration: underline #fe4a49;
+}
+
+#color2 {
+    color: #fe8a71;
+    text-decoration: underline #fe8a71;
+}
+
+.color2 {
+    color: #fe8a71;
+    text-decoration: underline #fe8a71;
+}
+
+
+#color3 {
+    color: #7bc043;
+    text-decoration: underline #7bc043;
+}
+
+.color3 {
+    color: #7bc043;
+    text-decoration: underline #7bc043;
+}
+
+
+#color4 {
+    color: #ff5588;
+    text-decoration: underline #ff5588;
+}
+
+.color4 {
+    color: #ff5588;
+    text-decoration: underline #ff5588;
+}
+
+.resultBox {
+    hright:200px
+}

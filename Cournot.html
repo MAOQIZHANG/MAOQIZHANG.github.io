@@ -2,9 +2,8 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>The King of Price - Cournot Competition</title>
+        <title>The King of Price</title>
         <link href="styles/basic.css" rel="stylesheet">
-        <link href="styles/navbar.css" rel="stylesheet">
         <link href="styles/Cournot.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Volkhov&display=swap" rel="stylesheet">
@@ -29,6 +28,7 @@
 
         <!-- Side Navbar -->
         <div class="sidenavwrapper">
+            <a href="#Forwards">Forwards</a>
             <a href="#BasicNotionsAndGlobalAssumptions">Basic Notions & Global Assumptions</a>
             <a href="#CournotMonopoly">Cournot Monopoly</a>
             <a href="#CournotDuopoly">Cournot Duopoly</a>
@@ -45,6 +45,21 @@
             <!-- Name Contents Sequentially For Archive Convenience -->
             <div class="Content1">
 
+                 <!-- Subsection Title -->
+                <div class="SubsectionTitleShell">
+                    <div class="SubsectionTitle">
+                        <span id="Forwards">Forwards</span>
+                    </div>
+                </div>
+
+                <p>
+                    This topic certainly demands a certain amount of mathematical computations. 
+                    It is inevitable that we need to give a lot of definitions and math works. 
+                    Just be patient! We're sure that you'll have fun once you get used to it!
+                </p>
+
+                <hr>
+
                     <p>
                     We provided the least amount of definition that will help constructing the frame of discussion in the simplified version. A more formal and rigorous one is also provided to you. 
                     You may choose the one that you feel comfortable with!
@@ -57,6 +72,7 @@
                     </div>  
                     <p></p>
 
+                
                 <!-- Subsection Title -->
                 <div class="SubsectionTitleShell">
                     <div class="SubsectionTitle">
@@ -69,8 +85,8 @@
                 Let there be two countries, \(A\) and \(B\), where
                 <ul>
                     <span id="simplified1">
-                        <li>Country \(A\) has \(l\) firms, we call them \(1, 2, \cdots, l\) respectively. Firm \(i\) \((i=1, 2, \cdots, l)\) can produce \(q_i\) units of chips that are needed for manufacturing CPUs for computers. 
-                            Note that these \(l\) firms will together produce $$q=q_1 + q_2 + \cdots + q_l$$ units of chips.</li>
+                        <li>Country \(A\) has \(2\) firms, we call them \(1, 2\) respectively. Firm \(i\) \((i=1, 2)\) can produce \(q_i\) units of chips that are needed for manufacturing CPUs for computers. 
+                            Note that these \(2\) firms will together produce $$q=q_1 + q_2$$ units of chips.</li>
                     </span>
 
                     <span id="rigorous1">
@@ -79,7 +95,7 @@
                     </span>
                     <p></p>
                     <span id="simplified2">
-                        <li>Let us assume one unit of chip cost c to produce. We further assume that \(c = 5\) for convenience. This means producing \(q\) units of chips need \(cq\) (which is just \(5q\)) units of money, in which case, we'll write \(c(q)\) to represent the cost to produce \(q\) units of chips.</li>
+                        <li>Let us assume one unit of chip cost \(c\) to produce. We further assume that \(c = 5\) for convenience. This means producing \(q\) units of chips need \(cq\) (which is just \(5q\)) units of money, in which case, we'll write \(c(q)\) to represent the cost to produce \(q\) units of chips.</li>
                     </span>
 
                     <span id="rigorous2">
@@ -140,7 +156,7 @@
                 </p>
 
                 <div class="buttons">
-                    <button onclick="showAnswer('1')" id="button31" class="button button3">Work out the profit of your firm provided that you decide to allocate your workers to produce \(q\) units of chips.</button>
+                    <button onclick="showAnswer('1')" id="button31" class="button button3">Work out the profit () of your firm provided that you decide to allocate your workers to produce \(q\) units of chips.</button>
                     <button id="fbutton31" class="button fbutton3" disabled>Work out the profit of your firm provided that you decide to allocate your workers to produce \(q\) units of chips.</button>
                 </div>
                 <div id="answer1" class="answer1">
@@ -204,7 +220,7 @@
                 <div class="division division2">
                     <p class="left_para">
                         Based on your previous analysis, we again see that the profit functions for both firms are of quadratic form. Moreover, we notice that \(\pi_1\) is maximized by \(\hat{q_1}=\dfrac{15-q_2}{2}\) and
-                        \(\pi_2\) is maximizd by \(\hat{q_2}=\dfrac{15-q_1}{2}\). It is reasonable for us to call such \(\hat{q_1}\) and \(\hat{q_2}\) the "best responses" for Firm 1 and Firm 2 respectively, since such output level 
+                        \(\pi_2\) is maximizd by \(\hat{q_2}=\dfrac{15-q_1}{2}\). It is reasonable for us to call such \(\hat{q_1}\) (red line) and \(\hat{q_2}\) (blue line) the "best responses" for Firm 1 and Firm 2 respectively, since such output level 
                         is sort of a "response" that maximizes one's profit given one's opponent's move. Naturally, we come up with the following plot.
                     </p>
                     <div class="right_plot">
@@ -237,6 +253,8 @@
                 Recall that these two lines correspond to the "<span class="mark_blue">best response</span>" of both firms in terms of output level that will maximize their profits. 
                 Hence there is a special meaning about the <span class="mark_red">intersection point</span>, where both firms have their profits maximized at it. 
                 It follows that no one can gain by unilateral change the output level. Therefore, we reach a <strong>Nash Equilibrium</strong> at the intersection.
+                </p>
+                <p>
                 This means, if the other firm also has a smart mind like you, you and your opponent will likely to choose the output quantity corresponds to the intersection point!!! 
                 We'll denote this special point from now on by \((q_1^e, q_2^e)\) (\(e\) refers to <strong>e</strong>quilibrium).
                 </p>
@@ -260,7 +278,7 @@
                     Putting \((q_1, q_2) = (5, 5)\) into \(\pi_1\) and \(\pi_2\) gives \(\pi_1 = \pi_2 = 25\).
                     <br>
                     <br>
-                    Note that \(\pi_1 + \pi_2 = 50 < \dfrac{225}{4} (=56.25)\). This means when the two firms merge into one firm, they behave worse than the scenario we've first discussed in the <span id="popboxtitle">Cournot Monopoly</span> section.
+                    Note that \(\pi_1 + \pi_2 = 50 < \dfrac{225}{4} (=56.25)\). This means when the two firms cooperate and act like one firm, they behave <span id="TToAGW">worse</span> than the scenario we've first discussed in the <span id="popboxtitle">Cournot Monopoly</span> section.
                     </p>
                 </div>
 
@@ -393,8 +411,8 @@
                     <div id="popbox">
                         Of course, you may play around with this simple calculator as you like. But most importantly, you should try to entering the quantities when
                         <ol>
-                            <li>One firm betrays and the other cooperate</li>
-                            <li>Both firms betray</li>
+                            <li>One firm betrays and the other cooperate (One produces \(\dfrac{45}{8}=5.625\), the other produces \(\dfrac{15}{4}=3.75\))</li>
+                            <li>Both firms betray (Both produces \(\dfrac{45}{8}=5.625\))</li>
                         </ol>
                         Pay extra attention to the profits, see if you can find anything profound.
                     </div>
@@ -459,7 +477,7 @@
                 <p>So what this theorem tells us is that, if both of the players are trying to cheat on the other, they themselves eventually reap what they've sown. As far as the author known, 
                 there is no documentation of such result. We shall name the result as </p>
                 <div class="buttons">
-                    <button class="button button5" disabled>
+                    <button id="LARGE" class="button button5" disabled>
                         <div id="popboxtitle">
                             "The Tale of A Greedy World".
                         </div>
@@ -516,9 +534,20 @@
                         <p></p>
                         <p>Among which, both firms choose to cooperate is the only Nash Equilibrium (No one can gain by unilateral change).</p>
                     </li>
+                    <li>By cooperating, two firms earn more profits, however, the customers suffer from increased prices (\(10\) to \(12.5\)).</li>
                     <li><span id="TToAGW">The Tale of A Greedy World</span>: If both players choose to betray the other, then they eventually reap what they've sown.</li>
                 </ul>
 
+                <hr>
+
+                <p>
+                    Recall that back in the introduction part, we mentioned <span class="mark_blue">the story of the automobiles</span>. Now that you've gone through this maze of mathematics! 
+                    You should know that why the <span class="red">Japanese automobiles companies</span> decreased their productivity but still earned their fortune! 
+                    But! ... This automobiles competition is <span class="blue">never a one time movie</span>. In reality, the competition will be repeated every year, every season, or even every day!
+                    Therefore, we need to further investigate what happened when we <span class="blue">repeatedly compete with other firms</span>!. This directs us to the next section.
+                </p>
+
+                <hr>
                 <p>This wraps up the whole section on Cournot Competition. In the next section, we'll proceed to explore the beauty of the repeated Cournot Competition.</p>
                 <p></p>
 

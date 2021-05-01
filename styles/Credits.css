@@ -21,6 +21,7 @@
 }
 
 .button {
+    display: block;
     border: none;
     color: white;
     padding: 16px 32px;
@@ -36,59 +37,62 @@
     cursor: pointer;
 }
 
-.button1 {
-    background-color: white;
-    color: #58668b;
-    border: 1.5px solid #58668b;
-}
-
-.button1:hover {
-    background-color: #58668b;
-    color: white;
-}
-
-.button2 {
-    background-color: white;
-    color: #eb6841;
-    border: 1.5px solid #eb6841;
-}
-
-.button2:hover {
-    background-color: #eb6841;
-    color: white;
-}
-
-.fbutton1 {
-    background-color: #58668b;
-    color: white;
-    display: none;
-}
-
-.fbutton2 {
-    background-color: #eb6841;
-    color: white;
-    display: none;
-}
-
-.next {
+.buttonblue {
     background-color: white;
     color: #426cf5;
     border: 1.5px solid #426cf5;
-    width: fit-content;
-    float: right;
-    display: none;
+    font-size: 20px;
+    width: 100%;
+    height: fit-content;
 }
 
-.next:hover {
+.buttonblue:hover {
     background-color: #426cf5;
     color: white;
+    transition: 0.3s;
+}
+
+.buttonpink {
+    background-color: white;
+    color: plum;
+    border: 1.5px solid plum;
+    font-size: 20px;
+    width: 100%;
+    height: fit-content;
+}
+
+.buttonpink:hover {
+    background-color: plum;
+    color: white;
+    transition: 0.3s;
+}
+
+.button7 {
+    background-color: white;
+    color: #53345e;
+    border: 1.5px solid #53345e;
+    width: 100%;
+    font-size: 15px;
+    padding: 8px 16px;
+    border-radius: 15px;
+    cursor: default;
+    height: fit-content;
+    text-align: left;
+}
+
+.button7 li {
+    font-size: 16px;
+}
+
+.button7:hover {
+    box-shadow: 5px 5px 5px #53345e;
 }
 
 /* Main Page Organisation */
 
-.Content{
+.Content {
     position: static;
-    width: 70%;
+    width: 75%;
     margin-top: 7%;
     margin-bottom: 7%;
     background-color: ghostwhite;
@@ -98,76 +102,54 @@
 
 .Content1 {
     margin: 5% 5% 5% 5%;
-    font-size: 19px;
-    line-height: 160%;
-}
-
-.Content2 {
-    margin: 5% 5% 5% 5%;
     font-size: 20px;
 }
 
-.Content2 li {
+li {
     font-size: 18px;
 }
 
-.Content1 .DropCap p::first-letter {
-    float: left;
-    font-size: 52px;
-    line-height: 1;
-    font-weight: bold;
-    margin-right: 9px;
-    margin-top: 3px;
+hr {
+    border: 1px solid #566357;
 }
 
-.pic1 {
-    float: right;
-    width: 60%;
-    padding-left: 6px;
+
+#popbox {
+    text-align: left;
 }
 
-#red {
+#popboxtitle {
+    text-decoration: underline #566357;
+}
+
+
+#underline {
+    text-decoration: underline #426cf5;
+}
+
+.mark_red {
+    color: #851e3e;
+}
+
+.red {
     color: #ee0435;
 }
 
-#green {
+.green {
     color: #00a0b0;
 }
 
-#explanation1 {
-    display: none;
-}
-
-#explanation2 {
-    display: none;
-}
-
-#explanation3 {
-    display: none;
-}
-
-#guess_correct {
-    color: #7bc043;
-    text-decoration: underline #7bc043;
-}
-
-#guess_false {
-    color: #ee4035;
-    text-decoration: underline #ee4035;
-}
-
-p:hover {
-    color: #451e3e;
-    transition: color 0.3s ease-in-out;
+.mark_blue {
+    color: #426cf5;
 }
 
 /* Side Navbar */
 
 .sidenavwrapper {
-    width: 190px;
+    width: 170px;
     position: fixed;
-    z-index: 2;
-    top: 45%;
+    z-index: 1;
+    top: 35%;
     left: 5px;
     overflow-x: hidden;
     padding: 8px 0;
@@ -186,4 +168,35 @@ p:hover {
 .sidenavwrapper a:hover {
     color: #426cf5;
     text-decoration: underline #426cf5;
+}
+
+.r {
+    color:darkred;
+}
+
+#LARGE {
+    font-size: 25px;
+}
+
+.ref {
+    font-size: 15px;
+}
+
+.ref a {
+    text-decoration: none;
+    color: black;
+}
+
+.ref a:hover {
+    color: #851e3e;
+    text-decoration: underline #851e3e;
+    transition: 0.3s;
+}
+
+.small {
+    font-size: 15px;
+}
+
+#color {
+    color: #426cf5;
 }
