@@ -166,7 +166,7 @@ body {
     position: absolute;
     bottom: 0;
     left: 20.5px;
-    width: 100px;
+    width: 50px;
     height: 3px;
     border-radius: 5px;
     transition: 0.2s ease left;
@@ -189,7 +189,7 @@ body {
 
 .nav a:nth-child(2):hover ~ #indicator
 {
-    left: 300px;
+    left: 192px;
     background: linear-gradient(130deg, #00e2ff, #89ff00);
 }
 
@@ -201,13 +201,13 @@ body {
 
 .nav a:nth-child(4):hover ~ #indicator
 {
-    left: 670px;
+    left: 651px;
     background: linear-gradient(130deg, #4ca1af, #c4e0e5);
 }
 
 .nav a:nth-child(5):hover ~ #indicator
 {
-    left: 805px;
+    left: 809px;
     background: linear-gradient(130deg, #ffd89b, #19547b);
 }
 

@@ -162,13 +162,13 @@
 
 .left1{
     font-family: 'Reggae One', cursive;
-    width:48%;
-    float:left;
+    width: 48%;
+    float: left;
 }
 
 .right1{
     font-family: 'Reggae One', cursive;
-    width:48%;
+    width: 48%;
     float:right;
 }
 
@@ -182,7 +182,7 @@
 .right{
     font-family: 'Reggae One', cursive;
     width:40%;
-    float:right;
+    float: right;
 }
 
 .container {
@@ -190,6 +190,7 @@
     font-family: 'Reggae One', cursive;
     width: 100%;
     height: 540px;
+    padding: 5%;
 }
 
 #GameBox{
@@ -266,15 +267,19 @@ input[type=number] {
 .Button{
     background: whitesmoke;
     width: 100%;
-    border: 1.5px solid #566357;
+    border: 1.5px solid #53345e;
     font-size: 20px;
-    padding:20px;
+    padding: 20px;
     text-align: center;
+    cursor: pointer;
+    border-radius: 15px;
+    font-family: 'Reggae One', cursive;
 }
 
 .Button:hover {
-    background-color: #566357;
+    background-color: #53345e;
     color: white;
+    transition: 0.4s ease-in-out;
 }
 
 .slider {
@@ -365,11 +370,100 @@ input[type=number] {
     text-decoration: underline #ff5588;
 }
 
-.color5 {
+#color5 {
     color: #2ab7ca;
     text-decoration: underline #2ab7ca;
 }
 
-.resultBox {
-    height:200px;
+.color6 {
+    color: #96ceb4;
+    text-decoration: #96ceb4;
+    font-size: 22px;
+}
+
+.StrategyLeft {
+    text-align: left;
+    display: inline;
+}
+
+.StrategyRight {
+    text-align: right;
+    display: inline;
+    margin-left: 10%;
+}
+
+.limit {
+    border: 1.5px solid #4d648d;
+    border-radius: 15px;
+    color: #4d648d;
+    background-color: white;
+    font-size: 18px;
+    padding: 8px 16px;
+    font-family: 'Reggae One', cursive;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.flimitb {
+    border: 1.5px solid #4d648d;
+    border-radius: 15px;
+    color: white;
+    background-color: #4d648d;
+    font-size: 18px;
+    padding: 8px 16px;
+    font-family: 'Reggae One', cursive;
+    text-align: center;
+    width: 100%;
+    display: none;
+}
+
+
+.limit:hover {
+    background-color: #4d648d;
+    color: white;
+    transition: 0.3s;
+}
+
+#flimit {
+    display: none;
+}
+
+.leftGame {
+    width: 30%;
+    display: inline-block;
+}
+
+.rightGame {
+    width: 65%;
+    float: right;
+    display: inline-block;
+}
+
+.next {
+    background-color: white;
+    color: #426cf5;
+    border: 1.5px solid #426cf5;
+    width: fit-content;
+    float: right;
+}
+
+.next:hover {
+    background-color: #426cf5;
+    color: white;
+}
+
+.last {
+    color: #005b96;
+    font-size: 22px;
+    border: 3px solid #005b96;
+    border-radius: 15px;
+    padding: 16px 32px;
+    text-align: center;
+}
+
+.last:hover {
+    color: white;
+    background-color: #005b96;
+    transition: 0.3s;
 }
