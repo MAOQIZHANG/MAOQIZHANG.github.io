@@ -185,11 +185,11 @@
     float:right;
 }
 
-.container{
-    display: table;
+.container {
+    display: block;
     font-family: 'Reggae One', cursive;
-    width:100%;
-    height: 800px;
+    width: 100%;
+    height: 540px;
 }
 
 #GameBox{
@@ -365,6 +365,11 @@ input[type=number] {
     text-decoration: underline #ff5588;
 }
 
+.color5 {
+    color: #2ab7ca;
+    text-decoration: underline #2ab7ca;
+}
+
 .resultBox {
-    hright:200px
+    height:200px;
 }
