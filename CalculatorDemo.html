@@ -4,10 +4,13 @@
         <meta charset="utf-8">
         <title>The King of Price</title>
         <link href="styles/basic.css" rel="stylesheet">
-        <link href="styles/Introduction.css" rel="stylesheet">
+        <link href="styles/Infinite.css" rel="stylesheet">
+        <link href="styles/Cournot.css" rel="stylesheet">
+        <link href="styles/Calculator.css" rel="stylesheet">
         <link href="styles/Plotter.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Reggae+One&family=Volkhov&display=swap" rel="stylesheet">
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     </head>
 
@@ -34,58 +37,78 @@
                     </div>
                 </div>
                 <!-- Subsequent Contents Goes Here -->
-                <p>This calculator allows you to solve for any Cournot Duopoly game under our assumption!
+                <p>
+                    This calculator grants you all solutions concepts discussed in this website under our previous assumptions.
                 </p>
-                <p>Consider two company in a trading competiton in which they produce one product
-                    Assuming the preliminaries that the demand function is strictly decreasing and the cost function for the
-                    two companies are linear. In this game, the two companies cannot cooperate AND must decide spontaneously.
-                    Suppose the cost function is linear, (in which we omit the fixed cost of production)
-                </p>
-                <div>
-                    <label for="marginalcost">marginal cost:  </label>
-                    <input type="number" id = "marginalcost" step="any" value = 2> (assume common cost for both player)
-                </div>
-                <div>
-                    <label>Quantity Function: </label>
-                    <input type="text" id = "demandFunction" value="30-x">
-                    <br>(Note that only linear function in the form ax+b is allowed with a<0 and b>0)
-                </div>
-                <br>
-                <div>
-                     <button class = "Button" onclick="Trial()">Show results of Cournot Competition</button>
-                     <div class = "result" id="ErrorInput">
-                         <p>Invalid input under general assumption of Cournot Competition</p>
-                     </div>
-                     <div class = "result" id = "Result1">
-                         <div class = "container" >
-                         <div class = "left">
-                             <div id = "ResultN"></div>
-                         </div>
-                         <div class = "right">
-                              <p>Calculation Result of Non-Cooperative Case</p>
-                              <div class = "result" id = "NormalCase">As shown in the graph and using methods in previous sections, the nash equilibrium is
-                                  (<span id = "P1Nash"></span> , <span id = "P2Nash"></span>) with gain (<span id = "G1Nash"></span> , <span id = "G2Nash"></span>)
-                              </div>
-                         </div>
-                         </div>
-                         <div class = "container">
-                         <div class = "left">
-                             <div id = "ResultC"></div>
-                         </div>
-                         <div class = "right">
-                              <p>Calculation Cooperative Case</p>
-                              <div>If cooperation allowed, the total quantity is maximized at <span id = "CoQ"></span>
-                                  <br> By Nash Bargaining Scheme, we should have equal gain for each player.
-                                  <br> The gain for each player is (<span id = "P1C"></span>, <span id = "P2C"></span>)
-                              </div>
-                         </div>
-                         </div>
+                <div class="GameBox">
+                    <h3>Cournot Duopoly</h3>
+                    <p>
+                        > Consider two companies producing homogenous products competing with each other. <br>
+                    </p>
 
-                     </div>
-                     <button class = "Button" onclick="RepeatedGame()">Show Revised Cournot Repeated Game</button>
-                     <div class = "result float-container Box2" id = "Result2">
-                         <p>If any quantity value allowed, </p>
-                         <table class="table">
+                    <div class="GameTitle">Price Function and Marginal Cost</div>
+                        <p>
+                            > Price function must be in the form \(p(q)=D-kq\) for some \(D, q \in \mathbb{R}^+\) <br>
+                            > The marginal cost must be a positive constant \(c \in \mathbb{R}^+\)
+                        </p>
+                        <div class="CostPrice">
+                            <div class="Price">
+                                <label for="marginalcost"><span id="color3">Marginal cost: </span></label>
+                                <input type="number" id="marginalcost" class="cost" step="any" value = 2>
+                            </div>
+                            <div class="Cost">
+                                <label><span id="color5">Price Function: </span></label>
+                                <input type="text" id = "demandFunction" class="price" value="30-x">
+                            </div>
+                        </div>
+
+                        <br>
+                        <br>
+                        <hr>
+
+                        <button class="button button4" onclick="Trial()">Non-cooperative & Cooperative Duopoly</button>
+
+                        <div class="outermostshell">      
+                            <div class="result" id="ErrorInput">
+                                <p>Invalid input under general assumption of Cournot Competition</p>
+                            </div>
+                            <div class="result" id="Result1">
+                                <div class="container1" >
+                                    <div class="leftpart">
+                                        <div id="ResultN"></div>
+                                    </div>
+                                    <div class="rightpart">
+                                         <div class="GameTitle">Non-cooperative Duopoly</div>
+                                            <br>
+                                            <div class = "result" id = "NormalCase">Output level constituting Nash equilibrium is
+                                            (<span id = "P1Nash"></span> , <span id = "P2Nash"></span>),  with profit vector (<span id = "G1Nash"></span> , <span id = "G2Nash"></span>)
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br>
+
+                            <div class="container">
+                                <div class = "leftpart">
+                                    <div id = "ResultC"></div>
+                                </div>
+                                <div class = "rightpart">
+                                    <div class="GameTitle">Cooperative Duopoly</div>
+                                        <div>If cooperation allowed, joint profit is maximized at output level <span id = "CoQ"></span>
+                                        <br> Assuming both players share an equal amount of workload, profit for players is (<span id = "P1C"></span>, <span id = "P2C"></span>)
+                                </div>
+                            </div>
+                         </div>
+                        </div>
+
+                        </div>
+
+                        <hr>
+
+                        <button class="button button4" onclick="RepeatedGame()">Cournot Duopoly Payoff Matrix</button>
+                        <div class = "result float-container Box2" id = "Result2">
+                            <p><span id="color1">Without</span> integral quantity assumption and conservative convention, </p>
+                        <table class="tablepayoff">
                              <tr>
                                  <th class="firm">Firm 1 \ Firm 2</th>
                                  <th class="strategy">Cooperate (Produce <span id="Co"></span>)</th>
@@ -103,8 +126,9 @@
                                  <th>(<span id="PP">0</span>)</th>
                              </tr>
                          </table>
-                         <p>After Applying <span class = "colorRed"> Integer Quantity</span> and  <span class = "colorRed"> Conservative Convention</span></p>
-                         <table class="table">
+                         
+                         <p><span id="color1">With</span> integral quantity assumption and conservative convention, </p>
+                         <table class="tablepayoff">
                              <tr>
                                  <th class="firm">Firm 1 \ Firm 2</th>
                                  <th class="strategy">Cooperate (Produce <span id="Co12"></span>)</th>
@@ -121,11 +145,14 @@
                                  <th>(<span id="PPT2"></span>)</th>
                              </tr>
                          </table>
-                     </div>
-                     <button class = "Button" onclick="ZeroDeterminant()">Show results of Zero Determinant Strategy </button>
-                     <div class = "result float-container Box1" id = "Result3">
-                         <div class = "container Box2">
-                             <div class = "left">
+                        </div>
+
+                        <hr>
+                        
+                        <button class="button button4" onclick="ZeroDeterminant()">Extortionate Zero-determinant Strategy </button>
+                        <div class = "result float-container Box1" id = "Result3">
+                            <div class = "container Box2">
+                                <div class = "left">
                                  <br>
                                  <img src="formula.png">
                              </div>
@@ -151,7 +178,7 @@
                     </div>
                 </div>
                 <br>
-
+            </div>
         </div>
 
         </div>

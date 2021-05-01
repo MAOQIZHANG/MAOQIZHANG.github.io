@@ -65,7 +65,7 @@
                         You may take this as an exercise, use previous knowledges to calculate your optimal quantity to produce, or start with any value you like! <br>
                         > We use \(q_i\) denote the amount to produce, \(\pi_i^k\) denote the profit in the kth round, and \(\pi_i\) denote the accumulated profits. <br>
                         > This calculator only accept integer values, this assumption will be explained later. <br>
-                        > This game consists real-time plot of profits and accumulated profits, <span class="color5">if you cannot see the graph on the right hand side properly, please refresh the page</span>.
+                        > This game consists real-time plot of profits and accumulated profits, <span id="color5">if you cannot see the graph on the right hand side properly, please refresh the page</span>.
                         
                     </p>
 
@@ -85,19 +85,19 @@
                                     <button class="button" id="Restart1" onclick = "restart2()">Restart</button>
                                 </div>
 
-                                <div class = "result" id = "InfiGameResult2">
+                                <div class="result" id = "InfiGameResult2">
                                     <p></p>
-                                    <span class="color5">Output level</span> <br>
+                                    <span id="color5">Output level</span> <br>
                                     <label>\(q_1\): <span id="quantitylasttime2"></span></label>
                                     <br>
                                     <label>\(q_2\): <span id="oquantitylasttime2"></span></label>
                                     <br>
-                                    <span class="color5">Round Gain</span> <br>
+                                    <span id="color5">Round Gain</span> <br>
                                     <label>\(\pi_1^k\): <span id="profitYou2"></span></label>
                                     <br>
                                     <label>\(\pi_2^k\): <span id = "profit2"></span></label>
                                     <br>
-                                    <span class="color5">Accumulated Gain</span> <br>
+                                    <span id="color5">Accumulated Gain</span> <br>
                                     <label>\(\pi_1\): <span id="Tprofit12">0</span></label>
                                     <br>
                                     <label>\(\pi_2\): <span id = "Tprofit22">0</span></label>
@@ -109,6 +109,7 @@
                     
                         <div class="rightContainer">
                             <div class="GameTitle">Real time Game result</div>
+                            <br>
                             <div id="graph3" class="left1"></div>
                             <div id="graph4" class="right1"></div>
                         </div>
@@ -239,6 +240,11 @@
                 </table>
 
                 where \(T>R>P>S\).
+
+                <hr>
+
+                <p>We'll play the infinitely cournot duopoly game once again, but this time, you choose a strategy between <span class="green">cooperation</span> and <span class="red">cheat</span> 
+                rather than the exact output value. Play around with it! See if you can find anything interesting.</p>
             
                 <p></p>
 
@@ -247,12 +253,15 @@
                     <p>
                         > There are two players (each with a different strategy), you may choose one of them to compete with.
                         > For this game, you only need to choose either <span class="green">0 (Cooperate)</span> or <span class="red">1 (Cheat)</span> as your strategy to enter into the input field.
+                        > We use \(q_i\) denote the amount to produce, \(\pi_i^k\) denote the profit in the kth round, and \(\pi_i\) denote the accumulated profits. <br>
+                        > This calculator only accept integer values, this assumption will be explained later. <br>
+                        > This game consists real-time plot of profits and accumulated profits, <span id="color5">if you cannot see the graph on the right hand side properly, please refresh the page</span>.
                     </p>
                     <div class="container" id="Con2">
                         <div class="smallleft">
                             <div class="GameTitle">Game Options</div>
                             <div id="PlayerButtons1">
-                                <p>Choose the Player you want to play with <br>
+                                <p>Choose a player you want to play with! <br>
                                 <div class="twobuttons">
                                     <button class="playertype button" onclick="WithP1();">Player I</button>
                                     <button class="playertype button" onclick="WithP2();">Player II</button>
@@ -278,16 +287,20 @@
                             </div>
                             <div class = "result" id = "InfiGameResult">
                                 <br>
-                                <label>The other company chooses to produce quantity: <span id="oquantitylasttime"></span></label>
-                                <br>You produce quantity: <span id="quantitylasttime"></span>
+                                <span id="color5">Output Level</span> <br>
+                                \(q_1\): <span id="quantitylasttime"></span>
                                 <br>
-                                <label>Your profit of this round is: <span id="profitYou"></span></label>
+                                <label>\(q_2\): <span id="oquantitylasttime"></span></label>
                                 <br>
-                                <label>Your opponent's profit of this round is: <span id = "profit"></span> </label>
+                                <span id="color5">Round Gain</span> <br>
+                                <label>\(\pi_1^k\): <span id="profitYou"></span></label>
                                 <br>
-                                <label>Your accumulated profit is: <span id="Tprofit1">0</span></label>
+                                <label>\(\pi_2^k\): <span id = "profit"></span> </label>
                                 <br>
-                                <label>Your opponent's accumulated profit is: <span id = "Tprofit2">0</span> </label>
+                                <span id="color5">Accumultaed Gain</span> <br>
+                                <label>\(\pi_1\): <span id="Tprofit1">0</span></label>
+                                <br>
+                                <label>\(\pi_2\): <span id = "Tprofit2">0</span> </label>
                             </div>
                             <div class = "result" id = "Error">
                                 <br>Please input valid values for quantity
@@ -299,6 +312,7 @@
                         </div>
                     <div class = "rightContainer">
                         <div class = "GameTitle">Real time Game result</div>
+                        <br>
                         <div id="graph" class =  "left1"></div>
                         <div id="graph2" class =  "right1"></div>
                     </div>
@@ -309,7 +323,7 @@
             <div class="Content3">
                 <div class="SubsectionTitleShell">
                     <div class="SubsectionTitle">
-                         Notable Strategies of Infinitely Repeated Cournot
+                         Notable Strategies of Infinitely Repeated Cournot Competition
                     </div>
                 </div>
 
@@ -335,39 +349,59 @@
                 </p>
                 <p>
                 <span class="color4">Aggressive Rate</span> <br>
-                    We also note that One can not gain more than the mutual cooperation value if he never cheats.
-                    The strategy mentioned above can be called protective mechanism since it never
-                    So for an aggressive player, he should choose to cheat actively, trying to gain a value higher than the mutual cooperation value.
-                    (Although this will lead to some cost since the other player might have a protective mechanism)
+                    Strategies like <span class="color1">Grim Trigger</span> and <span class="color2">Carrot and Stick</span> are rather a protective mechanism, 
+                    however, if you don't cheat (being aggressive), we've seen that you cannot gain anymore than the mutual cooperation result. 
+                    Therefore, if a player want to gain more, maybe he should cheat actively to attempt obtaining a higher payoff. <br>
+                    We'll assume that a player will attack (to cheat) if his opponent cooperates in a row for \(A\) times, and this defines the aggresive rate.
                 </p>
-                <p>We define Aggressive rate A, which means the player will choose to cheat given that the other player has cooperated in a row for A times.</p>
             </div>
 
             <div class="Content5" id = "GameSandbox">
                 <div class="SubsectionTitleShell">
                     <div class="SubsectionTitle">
-                         Board for competition!
+                        Infinite Cournot Duopoly Sandbox
                     </div>
                 </div>
 
-                <div class = "PlayerSandbox">
-                <p>Freely choose player with different strategy to compete. Figure out the possible winner among all.</p>
-                <p>Player I:</p>
-                    Protective Mechanism: T =
-                    <input id = "ProtectiveT1" type = "number" step = "1" value = "0">
-                    Aggressive Rate: A = 
-                    <input id = "AggressiveT1" type = "number" step = "1" value = "0">
-                    <p>Player II:</p>
-                    Protective Mechanism: T =
-                    <input id = "ProtectiveT2" type = "number" value = "0" step = "1">
-                    Aggressive Rate: A = 
-                    <input id = "AggressiveT2" type = "number" step = "1" value = "0">
-                </div>
+                <p>
+                    We provide you with a sandbox where you can freely manipulate the protective mechanism and aggressive rate (as defined in the last section). 
+                    It is your time to determine whether to be conservative, aggressive, or both!
+                </p>
+                <div class="GameBox">
+                    <h3>Infinite Cournot Duopoly Sandbox</h3>
+                    <p>
+                        > T, protective mechanism, is the number of punishment on your opponent once you've got betrayed. <br>
+                        > A, aggressive rate, is the number of times your opponent cooperates in a row that you attack once. <br>
+                        > This game contains a real-time animated plot, if you cannot see it properly, please refresh. <br>
+                        > If the animation accidentally stops, click the "start the competition" button again to continue.
+                    </p>
+                    
+                    <div class = "PlayerSandbox">
+                        <div class="GameTitle">Strategic Setup</div>
+                        <h3>Player I:</h3>
+                            <div class="StrategyLeft">
+                                <span class="color3">Protective Mechanism: T =</span> 
+                                <input id = "ProtectiveT1" type = "number" step = "1" value = "0">
+                            </div>
+                            <div class="StrategyRight">
+                                <span class="color1">Aggressive Rate: A =</span>
+                                <input id = "AggressiveT1" type = "number" step = "1" value = "0">
+                            </div>
+
+                        <h3>Player II:</h3>
+                            <div class="StrategyLeft">
+                                <span class="color3">Protective Mechanism: T =</span>
+                                <input id = "ProtectiveT2" type = "number" value = "0" step = "1">
+                            </div>
+                            <div class="StrategyRight">
+                                <span class="color1">Aggressive Rate: A =</span>
+                                <input id = "AggressiveT2" type = "number" step = "1" value = "0">
+                            </div>
+                        </div>
                 <br>
-                <div class = "Button" onclick = "StartComp();">Start the competition</div>
+                <button class="Button" onclick = "StartComp();">Start the competition</button>
                 <div>
-                    <p>Note that due to server instability, you need to reload the page every time you change the parameter and
-                        then press "Start the Competition!" to make sure the plotting each time is correct</p>
+                    <p></p>
                     <div class = "result">
                         You choose <span id = "SandboxPlayerI"></span> as First Player
                         and <span id = "SandboxPlayerII"></span> as Second Player
@@ -376,17 +410,12 @@
                         <div id = "graph5" class ="left1"></div>
                         <div id = "graph6" class = "right1"></div>
                         <br>
-                        <br>
-                        <div class = "resultBox">
-                            <br>Some observations:
-                            <br>By introducing this kind of strategy on both player, you can see that the results repest periodically.
-                            <br>The player who is on the top in the graph of average graph is the winner.
                         </div>
                     </div>
                     <div class = "result" id = "InfiInputError">
                         <p>Your input is invalid, check!!!</p>
                     </div>
-                </div>
+                </div>   
             </div>
 
             <div class="Content4">
@@ -490,34 +519,87 @@
                     </ul>
                 </div>
 
+                <button id="limit" class="limit" onclick="ShowLimit()">What happens when \(\chi\to\infty\)?</button>
+                <button id="flimitb" class="flimitb" onclick="ShowLimit()">What happens when \(\chi\to\infty\)?</button>
+                <div id="flimit">
+                    <hr>
+                    Note that we have 
+                    $$\lim_{\chi\to\infty} s_x = \dfrac{R(T-S)-P(T-R)}{R-S} = \left(\dfrac{R-P}{R-S}\right)T-\dfrac{R}{R-S}(P-S) < T$$
+                    and
+                    $$\lim_{\chi\to\infty} s_y = \dfrac{P(R-S)}{R-S} = P.$$
+                    Therefore, we see that extortionate profit cannot exceed a fixed number smaller than \(T\), while the player being extortioned still can guarantee the mutual defection value, \(P\).
+                    <hr>
+                </div>
+
                 <hr>
 
                 <p>
                     Despite that we won't prove all these results, but the extortionate factor itself is already interesting enough to explore. Try to freely alter the extortionate factor, 
-                    take a look at both players' payoffs. When will the player facing zero-determinant strategy has the motivation to accept the extortion?
+                    take a look at both players' payoffs. 
+                    <div class="orderedlist">
+                        <ul>
+                            <li>When will the player facing zero-determinant strategy most likely has the motivation to accept the extortion?</li>
+                            <li>What does it mean to have an extortionate factor smaller than 1?</li>
+                        </ul>
+                    </div>
                 </p>
-                <div>
-                    <label for="ExFactor1">Extortionate Factor(between 0 and 10):</label><span id="exDisplay1"></span>
-                    <input type="range" id="ExFactor1" min="0" max="10" step = "0.01">
-                    <p>In the long run, if the other player accepted such factor,</p>
-                    <p>Your gain using such Zero Determinant Strategy: <span id="GainX1"></span></p>
-                    <p>The other player‘s gain: <span id="GainY1"></span></p>
+                <div class="GameBox">
+                    <h3>Zero-determinant Strategy with Extortionate Factors</h3>
+                    <p>
+                        > Note that \(T = 110\), \(R = 98\), \(P = 80\), and \(S = 77\). <br>
+                        > We restrict the extortionate factor's range to 0 to 10. Recall that an extortion too high will make the extortion target lose incentive to cooperate.
+                    </p>
+                    <div class="wholeGame">
+                        <div class="leftGame">
+                            <div class="GameTitle">Extortionate Setup</div>
+                            <br>
+                            <label for="ExFactor1" id="color1">Extortionate Factor: </label><span id="exDisplay1"></span>
+                            <br>
+                            <div class="Chi"><input type="range" id="ExFactor1" min="0" max="10" step = "0.001"></div>
+                            <p></p><br>
+                        </div>
+                        <div class="rightGame">
+                            <div class="GameTitle">Extortionate Profits</div>
+                            <p>If the other player decides to accept the extortion, then:</p>
+                            <p>
+                                <span id="color3">Extortionate Profit: </span><span id="GainX1"></span> <br>
+                                <span id="color1">Extorted Profit: </span><span id="GainY1"></span>
+                            </p>
+                        </div>
+                    </div>
                 </div>
         </div>
 
             <div class="Content4">
                 <div class="SubsectionTitleShell">
                     <div class="SubsectionTitle">
-                         Takeaway from this project
+                        Epilogue
                     </div>
                 </div>
-                Examples of cournot competition widely exist in our daily life. The examples in market and industry are
-                commonly seen and easy to understand. (e.g. Firms deciding production number, countries deciding oil production, etc.)
-                <br>The best part of our analysis is to turn this game into a finite combinatorial game, more precisely, under some conditions and reasonable assumptions
-                a prisoner's dilemma, which can be analyzed more easily.
-                <br>When the game is repeated, strategies with aggressive rate and protective mechanism are introduced.
-                <br>Finally, we apply an advanced strategy called zero-determinant strategy to our game matrix and discuss how the
-                player can maximize his own profit.
+
+                <p>
+                    After traversing all that about the Cournot Competition, backtracking to the very beginning, we're sure that you've already got some clues 
+                    why the protection scheme imposed by American government actually benefits the Japanese automobiles companies. This is also why the 
+                    World Trade Organization (WTO) <span id="color1">called it an end on Volutnary Export Restraints (VER) in 1994</span>.
+                </p>
+                <p>
+                    Cournot Competition is actually a kind of competition based on homogenous products' competition, this does not only apply to the commercial field, all these techniques
+                    you've learnt can also be used on modelling real-life scenarios. We encourage you to model similar scenarios as we've done, into a iterated Prisoners' Dilemma, this not only 
+                    reduces the difficulty of analyzing such games, but also more intuitive and realistic.
+                </p>
+                <p>
+                    In terms of applications, we provided a calculator that allows you to compute all those solution concepts discussed throughout this website.
+                </p>
+                
+                <button id="next" class="button next" onclick='location.href="CalculatorDemo.html"'>Next: Calculator</button>
+                
+                <br><br>
+
+                <hr>
+
+                <p class="last">
+                    Lastly, we once again thanks for whoever exploring this website, hope that you will find this topic interesting and useful for you life! See you!
+                </p>
 
             </div>
 
