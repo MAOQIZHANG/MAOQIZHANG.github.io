@@ -333,7 +333,7 @@
                     So for an aggressive player, he should choose to cheat actively, trying to gain a value higher than the mutual cooperation value.
                     (Although this will lead to some cost since the other player might have a protective mechanism)
                 </p>
-                <p>We define a cheating technique, in which the player will choose to cheat given that the other player choose to cooperate in a row for T times.</p>
+                <p>We define Aggressive rate A, which means the player will choose to cheat given that the other player has cooperated in a row for A times.</p>
             </div>
 
             <div class="Content5" id = "GameSandbox">
@@ -348,11 +348,13 @@
                 <p>Player I:</p>
                     Protective Mechanism: T =
                     <input id = "ProtectiveT1" type = "number" step = "1" value = "0">
-                    Aggressive Rate: <input id = "AggressiveT1" type = "number" step = "1" value = "0">
+                    Aggressive Rate: A = 
+                    <input id = "AggressiveT1" type = "number" step = "1" value = "0">
                     <p>Player II:</p>
                     Protective Mechanism: T =
                     <input id = "ProtectiveT2" type = "number" value = "0" step = "1">
-                    Aggressive Rate: <input id = "AggressiveT2" type = "number" step = "1" value = "0">
+                    Aggressive Rate: A = 
+                    <input id = "AggressiveT2" type = "number" step = "1" value = "0">
                 </div>
                 <br>
                 <div class = "Button" onclick = "StartComp();">Start the competition</div>
